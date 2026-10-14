@@ -42,3 +42,27 @@ recipe. The sixth turned out to be a useful property of the tool.
   low-frequency noise. A longer FFT for the low band, or a constant-Q display, would help.
 - **Synth sequence durations**: a sequence ending in rests stops at the last sound, so the total length needs an
   explicit `duration`. That's reasonable, but easy to miss.
+
+## Round 2: building the UI and retro-game effects pack
+
+The 24 effects passed every technical check, but a set-level review through the tools (`audio_batch_survey`, plus
+`audio_events` descriptions) showed problems that only appear once you treat the files as a *set*.
+
+| Found | Cause | Fixed in the tool |
+|---|---|---|
+| Loudness spread of 8.8 dB even though every file was peak-normalized; the whoosh was far too quiet | Peak level isn't perceived loudness, and integrated LUFS is undefined under 0.4 s, so short effects had no perceptual measure | New `lufs_momentary_max` (EBU momentary loudness, loudest 400 ms window, defined for any length) in the analysis output; `normalize_lufs(measure="momentary_max")`. Spread fell to 1.0 dB |
+| The batch survey suggested peak-normalizing files that were already peak-normalized | It fell back to RMS and a generic suggestion for short files | The survey compares one-shots by momentary loudness and suggests `normalize_lufs` with `measure="momentary_max"` and no limiter |
+| 22 files warned "true peak above -1 dBTP" after normalizing to -1 dBFS | Sample peak isn't true peak | `normalize_peak(true_peak=true)`. `normalize_lufs`'s ceiling is now always a true-peak ceiling (it already was when limiting, but not otherwise) |
+| Brown-noise sounds showed a DC offset and "53% of energy below 20 Hz" | The coloured-noise generator had energy all the way down to 0 Hz | Pink and brown noise now have nothing below 20 Hz, and still loop seamlessly |
+| "Mains hum at 50 Hz (peaks at 250 Hz)" on a sound with one note at 250 Hz | Any peak on a mains harmonic counted | Hum now needs the 50/60 Hz fundamental or its 2nd harmonic |
+
+Still open (logged, not fixed):
+- **Over-splitting in `audio_events`:** a smooth pitch sweep (`game_jump`) or a noise swell (`ui_whoosh`) gets
+  split into several events, because spectral-flux onsets fire as energy moves between frequency bins.
+- **Fast chirps and dense square-wave sweeps read as "noisy"** in short analysis windows. That's arguably accurate
+  for the window, but surprising.
+- **Layered sounds confuse per-event pitch** (melody plus bass reads as glides). This is the known one-note-at-a-time
+  limit.
+
+A side effect of the noise-generator fix: the reference pack's "bad loop" file, which relied on random brown
+noise, stopped clicking. The rebuild check caught it, and the file is now a deterministic tone cut mid-cycle.

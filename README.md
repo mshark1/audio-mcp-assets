@@ -11,7 +11,7 @@ audio.
   those tools over MCP; the exact tool calls for each file are in `recipes.json`.
 - **Every file is verified twice:**
   1. `manifest.json`: 51 checks of each file's intended properties, measured with audio-mcp's own analysis tools.
-  2. `tools/verify_independent.py`: 30 checks that use **no audio-mcp code at all** (numpy, scipy and pyloudnorm,
+  2. `tools/verify_independent.py`: 32 checks that use **no audio-mcp code at all** (numpy, scipy and pyloudnorm,
      reading the samples directly), so a bug in the tool can't confirm itself.
 
 All files are 48 kHz, 24-bit WAV.
@@ -63,8 +63,8 @@ All files are 48 kHz, 24-bit WAV.
 | `problem_leading_silence.wav` | PROBLEM FILE: a short tone preceded by 1.5 s and followed by 1.0 s of silence (a common one-shot sound-effect defect). *(3 s, mono)* | 3/3 |
 | `problem_too_quiet_-40LUFS.wav` | PROBLEM FILE: pink noise at -40 LUFS, far below any delivery target. An analyzer should flag it as very quiet. *(10 s, mono)* | 2/2 |
 | `problem_abrupt_start.wav` | PROBLEM FILE: noise burst that starts at full level with no fade-in, so playback begins with a click. *(1 s, mono)* | 1/1 |
-| `problem_loop_seam_click.wav` | PROBLEM FILE: 2 s of brown noise cut out of a longer recording and meant as a loop; the end doesn't meet the start, so it clicks every time it repeats. Pair with fixed_loop_seamless.wav. *(2 s, mono)* | 1/1 |
-| `fixed_loop_seamless.wav` | FIXED: problem_loop_seam_click.wav after a 100 ms equal-power loop crossfade; it now repeats without a click. *(1.9 s, mono)* | 1/1 |
+| `problem_loop_seam_click.wav` | PROBLEM FILE: a 110 Hz drone meant to loop, but cut mid-cycle (2.0025 s = 220.275 periods), so the waveform jumps from about +0.5 back to 0 at every repeat: an audible click. Pair with fixed_loop_seamless.wav. *(2.002 s, mono)* | 1/1 |
+| `fixed_loop_seamless.wav` | FIXED: problem_loop_seam_click.wav after a 100 ms equal-power loop crossfade; the seam is now continuous and it repeats without a click. *(1.903 s, mono)* | 1/1 |
 | `problem_dc_offset.wav` | PROBLEM FILE: 440 Hz tone riding on a constant DC offset of +0.1 (a fault from some converters and cheap interfaces). Fix with remove_dc or a high-pass filter. *(3 s, mono)* | 2/2 |
 
 ## For AI agents and test harnesses

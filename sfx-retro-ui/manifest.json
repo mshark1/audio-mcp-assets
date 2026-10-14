@@ -1,0 +1,2540 @@
+{
+ "pack": {
+  "name": "audio-mcp UI and retro game sounds",
+  "version": "0.1.0-draft",
+  "description": "Short interface and retro game sound effects, synthesized from scratch with audio-mcp.",
+  "made_with": "https://github.com/mshark1/audio-mcp"
+ },
+ "license": "CC0-1.0",
+ "assets": [
+  {
+   "file": "ui_click.wav",
+   "description": "Crisp, very short interface click.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.012
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -1.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -26.25,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 835,
+       "layers": [
+        {
+         "wave": "noise",
+         "duration": 0.012,
+         "highpass": 2500,
+         "envelope": {
+          "attack": 0.0005,
+          "release": 0.011
+         }
+        },
+        {
+         "wave": "sine",
+         "freq": 2200,
+         "duration": 0.012,
+         "gain_db": -8,
+         "envelope": {
+          "attack": 0.0005,
+          "release": 0.011
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/ui_click.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/ui_click.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "ui_tap_soft.wav",
+   "description": "Soft, rounded tap for touch feedback.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.05
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -1.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -17.49,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 1181,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": 880,
+         "freq_end": 700,
+         "duration": 0.05,
+         "envelope": {
+          "attack": 0.001,
+          "release": 0.045
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/ui_tap_soft.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/ui_tap_soft.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "ui_toggle_on.wav",
+   "description": "Two quick rising notes (G5 to C6): switch on.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.13
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -4.75,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -16.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 1275,
+       "layers": [
+        {
+         "wave": "triangle",
+         "sequence": [
+          [
+           "G5",
+           0.05
+          ],
+          [
+           "C6",
+           0.08
+          ]
+         ],
+         "envelope": {
+          "attack": 0.002,
+          "release": 0.03
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/ui_toggle_on.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/ui_toggle_on.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "ui_toggle_off.wav",
+   "description": "Two quick falling notes (C6 to G5): switch off.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.13
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -4.58,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -16.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 1369,
+       "layers": [
+        {
+         "wave": "triangle",
+         "sequence": [
+          [
+           "C6",
+           0.05
+          ],
+          [
+           "G5",
+           0.08
+          ]
+         ],
+         "envelope": {
+          "attack": 0.002,
+          "release": 0.03
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/ui_toggle_off.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/ui_toggle_off.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "ui_confirm.wav",
+   "description": "Bright three-note arpeggio (C5 E5 G5): action confirmed.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.3
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -5.51,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -16.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 1067,
+       "layers": [
+        {
+         "wave": "triangle",
+         "sequence": [
+          [
+           "C5",
+           0.06
+          ],
+          [
+           "E5",
+           0.06
+          ],
+          [
+           "G5",
+           0.18
+          ]
+         ],
+         "envelope": {
+          "attack": 0.002,
+          "decay": 0.04,
+          "sustain": 0.6,
+          "release": 0.08
+         }
+        },
+        {
+         "wave": "sine",
+         "sequence": [
+          [
+           "C6",
+           0.06
+          ],
+          [
+           "E6",
+           0.06
+          ],
+          [
+           "G6",
+           0.18
+          ]
+         ],
+         "gain_db": -12,
+         "envelope": {
+          "attack": 0.002,
+          "release": 0.08
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/ui_confirm.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/ui_confirm.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "ui_success.wav",
+   "description": "Four-note rising arpeggio ending on a held octave: task complete.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.56
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -6.24,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -16.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 1078,
+       "layers": [
+        {
+         "wave": "triangle",
+         "sequence": [
+          [
+           "C5",
+           0.07
+          ],
+          [
+           "E5",
+           0.07
+          ],
+          [
+           "G5",
+           0.07
+          ],
+          [
+           "C6",
+           0.35
+          ]
+         ],
+         "envelope": {
+          "attack": 0.002,
+          "decay": 0.05,
+          "sustain": 0.5,
+          "release": 0.2
+         }
+        },
+        {
+         "wave": "sine",
+         "sequence": [
+          [
+           "C6",
+           0.07
+          ],
+          [
+           "E6",
+           0.07
+          ],
+          [
+           "G6",
+           0.07
+          ],
+          [
+           "C7",
+           0.35
+          ]
+         ],
+         "gain_db": -14,
+         "envelope": {
+          "attack": 0.002,
+          "release": 0.2
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/ui_success.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/ui_success.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "ui_error.wav",
+   "description": "Low buzzy descending pair: something went wrong.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.33
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -11.78,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -16.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 871,
+       "layers": [
+        {
+         "wave": "square",
+         "sequence": [
+          [
+           "A3",
+           0.12
+          ],
+          [
+           "rest",
+           0.03
+          ],
+          [
+           "F3",
+           0.18
+          ]
+         ],
+         "lowpass": 1800,
+         "envelope": {
+          "attack": 0.003,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/ui_error.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/ui_error.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "ui_warning.wav",
+   "description": "Two identical mid beeps: attention needed.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.24
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -10.15,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -16.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 1075,
+       "layers": [
+        {
+         "wave": "square",
+         "sequence": [
+          [
+           "E5",
+           0.09
+          ],
+          [
+           "rest",
+           0.06
+          ],
+          [
+           "E5",
+           0.09
+          ]
+         ],
+         "lowpass": 3500,
+         "gain_db": -3,
+         "envelope": {
+          "attack": 0.002,
+          "release": 0.03
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/ui_warning.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/ui_warning.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "ui_notification.wav",
+   "description": "Soft two-partial bell: incoming notification.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.7
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -8.88,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -16.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 1604,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": "E6",
+         "duration": 0.7,
+         "envelope": {
+          "attack": 0.002,
+          "decay": 0.68,
+          "sustain": 0.0,
+          "release": 0.01
+         }
+        },
+        {
+         "wave": "sine",
+         "freq": "B6",
+         "duration": 0.45,
+         "gain_db": -9,
+         "envelope": {
+          "attack": 0.002,
+          "decay": 0.43,
+          "sustain": 0.0,
+          "release": 0.01
+         }
+        },
+        {
+         "wave": "sine",
+         "freq": "E7",
+         "duration": 0.2,
+         "gain_db": -18,
+         "envelope": {
+          "attack": 0.002,
+          "decay": 0.19,
+          "sustain": 0.0,
+          "release": 0.01
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/ui_notification.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/ui_notification.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "ui_pop.wav",
+   "description": "Quick upward bubble pop: message or tooltip appears.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.08
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -3.12,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -16.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 652,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": 500,
+         "freq_end": 1300,
+         "duration": 0.08,
+         "envelope": {
+          "attack": 0.001,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/ui_pop.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/ui_pop.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "ui_whoosh.wav",
+   "description": "Airy noise swell: panel slides in.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.32
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -1.48,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -16.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 981,
+       "layers": [
+        {
+         "wave": "pink",
+         "duration": 0.32,
+         "highpass": 700,
+         "lowpass": 7000,
+         "envelope": {
+          "attack": 0.15,
+          "decay": 0.0,
+          "sustain": 1,
+          "release": 0.17
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/ui_whoosh.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/ui_whoosh.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "ui_delete.wav",
+   "description": "Crumple-and-drop: item deleted.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.19
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -4.37,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -16.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 944,
+       "layers": [
+        {
+         "wave": "noise",
+         "duration": 0.09,
+         "lowpass": 3000,
+         "envelope": {
+          "attack": 0.002,
+          "release": 0.08
+         }
+        },
+        {
+         "wave": "sine",
+         "freq": 420,
+         "freq_end": 130,
+         "start": 0.03,
+         "duration": 0.16,
+         "gain_db": -2,
+         "envelope": {
+          "attack": 0.003,
+          "release": 0.1
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/ui_delete.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/ui_delete.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "game_coin.wav",
+   "description": "Classic two-tone coin pickup (B5 to E6).",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.38
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -10.69,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -16.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 930,
+       "layers": [
+        {
+         "wave": "square",
+         "sequence": [
+          [
+           "B5",
+           0.06
+          ],
+          [
+           "E6",
+           0.32
+          ]
+         ],
+         "lowpass": 6000,
+         "envelope": {
+          "attack": 0.001,
+          "decay": 0.25,
+          "sustain": 0.2,
+          "release": 0.06
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/game_coin.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/game_coin.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "game_jump.wav",
+   "description": "Upward square-wave sweep: player jumps.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.18
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -9.78,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -16.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 949,
+       "layers": [
+        {
+         "wave": "square",
+         "freq": 180,
+         "freq_end": 620,
+         "duration": 0.18,
+         "lowpass": 5000,
+         "envelope": {
+          "attack": 0.002,
+          "release": 0.07
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/game_jump.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/game_jump.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "game_powerup.wav",
+   "description": "Fast rising arpeggio over two octaves: power-up collected.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.465
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -10.75,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -16.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 1291,
+       "layers": [
+        {
+         "wave": "triangle",
+         "sequence": [
+          [
+           "C5",
+           0.045
+          ],
+          [
+           "E5",
+           0.045
+          ],
+          [
+           "G5",
+           0.045
+          ],
+          [
+           "C6",
+           0.045
+          ],
+          [
+           "E6",
+           0.045
+          ],
+          [
+           "G6",
+           0.045
+          ],
+          [
+           "C7",
+           0.045
+          ],
+          [
+           "E7",
+           0.15
+          ]
+         ],
+         "envelope": {
+          "attack": 0.002,
+          "release": 0.02
+         }
+        },
+        {
+         "wave": "square",
+         "sequence": [
+          [
+           "C4",
+           0.045
+          ],
+          [
+           "E4",
+           0.045
+          ],
+          [
+           "G4",
+           0.045
+          ],
+          [
+           "C5",
+           0.045
+          ],
+          [
+           "E5",
+           0.045
+          ],
+          [
+           "G5",
+           0.045
+          ],
+          [
+           "C6",
+           0.045
+          ],
+          [
+           "E6",
+           0.15
+          ]
+         ],
+         "lowpass": 3000,
+         "gain_db": -14,
+         "envelope": {
+          "attack": 0.002,
+          "release": 0.02
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/game_powerup.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/game_powerup.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "game_laser.wav",
+   "description": "Falling square-wave zap: laser shot.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.25
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -11.86,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -16.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 1040,
+       "layers": [
+        {
+         "wave": "square",
+         "freq": 1800,
+         "freq_end": 180,
+         "duration": 0.25,
+         "lowpass": 6000,
+         "envelope": {
+          "attack": 0.001,
+          "release": 0.1
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/game_laser.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/game_laser.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "game_explosion.wav",
+   "description": "Low noise blast with a sub thump: explosion.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.9
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -3.81,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -16.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 1498,
+       "layers": [
+        {
+         "wave": "brown",
+         "duration": 0.9,
+         "lowpass": 2000,
+         "envelope": {
+          "attack": 0.002,
+          "decay": 0.85,
+          "sustain": 0.0,
+          "release": 0.04
+         }
+        },
+        {
+         "wave": "noise",
+         "duration": 0.15,
+         "lowpass": 5000,
+         "gain_db": -8,
+         "envelope": {
+          "attack": 0.001,
+          "release": 0.14
+         }
+        },
+        {
+         "wave": "sine",
+         "freq": 110,
+         "freq_end": 35,
+         "duration": 0.5,
+         "gain_db": -3,
+         "envelope": {
+          "attack": 0.002,
+          "release": 0.3
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/game_explosion.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/game_explosion.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "game_hit.wav",
+   "description": "Short crunchy impact: player or enemy takes damage.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.11
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -3.7,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -16.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 830,
+       "layers": [
+        {
+         "wave": "noise",
+         "duration": 0.07,
+         "lowpass": 4000,
+         "envelope": {
+          "attack": 0.001,
+          "release": 0.06
+         }
+        },
+        {
+         "wave": "square",
+         "freq": 320,
+         "freq_end": 110,
+         "duration": 0.11,
+         "lowpass": 2500,
+         "gain_db": -4,
+         "envelope": {
+          "attack": 0.001,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/game_hit.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/game_hit.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "game_pickup.wav",
+   "description": "Bright upward chirp: item picked up.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.2
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -6.26,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -16.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 1157,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": 800,
+         "freq_end": 1700,
+         "duration": 0.09,
+         "envelope": {
+          "attack": 0.001,
+          "release": 0.04
+         }
+        },
+        {
+         "wave": "triangle",
+         "freq": "E6",
+         "start": 0.08,
+         "duration": 0.12,
+         "gain_db": -4,
+         "envelope": {
+          "attack": 0.002,
+          "release": 0.09
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/game_pickup.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/game_pickup.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "game_select.wav",
+   "description": "Tiny square blip: menu cursor moves.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.035
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -3.06,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -16.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 1145,
+       "layers": [
+        {
+         "wave": "square",
+         "freq": 990,
+         "duration": 0.035,
+         "lowpass": 5000,
+         "gain_db": -2,
+         "envelope": {
+          "attack": 0.001,
+          "release": 0.015
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/game_select.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/game_select.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "game_over.wav",
+   "description": "Slow descending phrase with a wobbling last note: game over.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 1.74
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -11.88,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -16.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 949,
+       "layers": [
+        {
+         "wave": "square",
+         "sequence": [
+          [
+           "G4",
+           0.28
+          ],
+          [
+           "F#4",
+           0.28
+          ],
+          [
+           "F4",
+           0.28
+          ],
+          [
+           "E4",
+           0.9
+          ]
+         ],
+         "lowpass": 2500,
+         "vibrato": {
+          "rate_hz": 6,
+          "depth_cents": 25
+         },
+         "envelope": {
+          "attack": 0.005,
+          "decay": 0.1,
+          "sustain": 0.7,
+          "release": 0.25
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/game_over.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/game_over.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "game_level_complete.wav",
+   "description": "Short triumphant fanfare: level complete.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 1.46
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -7.8,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -16.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 1993,
+       "layers": [
+        {
+         "wave": "triangle",
+         "sequence": [
+          [
+           "C5",
+           0.12
+          ],
+          [
+           "E5",
+           0.12
+          ],
+          [
+           "G5",
+           0.12
+          ],
+          [
+           "C6",
+           0.24
+          ],
+          [
+           "G5",
+           0.12
+          ],
+          [
+           "C6",
+           0.5
+          ]
+         ],
+         "envelope": {
+          "attack": 0.003,
+          "decay": 0.05,
+          "sustain": 0.7,
+          "release": 0.1
+         }
+        },
+        {
+         "wave": "square",
+         "sequence": [
+          [
+           "C4",
+           0.36
+          ],
+          [
+           "G4",
+           0.36
+          ],
+          [
+           "C5",
+           0.74
+          ]
+         ],
+         "lowpass": 2000,
+         "gain_db": -12,
+         "envelope": {
+          "attack": 0.003,
+          "release": 0.15
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/game_level_complete.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/game_level_complete.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "game_footstep.wav",
+   "description": "Muffled retro footstep.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.07
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -1.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -21.82,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 1389,
+       "layers": [
+        {
+         "wave": "brown",
+         "duration": 0.07,
+         "lowpass": 900,
+         "envelope": {
+          "attack": 0.002,
+          "release": 0.06
+         }
+        },
+        {
+         "wave": "noise",
+         "duration": 0.02,
+         "highpass": 2000,
+         "gain_db": -16,
+         "envelope": {
+          "attack": 0.001,
+          "release": 0.018
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/game_footstep.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/game_footstep.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  },
+  {
+   "file": "game_teleport.wav",
+   "description": "Warbling upward sweep: teleport or portal.",
+   "format": {
+    "format": "WAV",
+    "subtype": "PCM_24",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 0.6
+   },
+   "ground_truth": {},
+   "verification": [
+    {
+     "measure": "audio_analyze:levels.clipped_samples",
+     "expect": 0,
+     "measured": 0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.true_peak_dbtp",
+     "max": -1.0,
+     "measured": -12.04,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:levels.lufs_momentary_max",
+     "max": -15.9,
+     "measured": -16.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:silence.leading_s",
+     "max": 0.005,
+     "measured": 0.0,
+     "pass": true
+    },
+    {
+     "measure": "audio_analyze:edges.end_amplitude",
+     "max": 0.01,
+     "measured": 0.0,
+     "pass": true
+    }
+   ],
+   "recipe": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 1384,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": 200,
+         "freq_end": 2400,
+         "duration": 0.6,
+         "vibrato": {
+          "rate_hz": 28,
+          "depth_cents": 180
+         },
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.25
+         }
+        },
+        {
+         "wave": "triangle",
+         "freq": 400,
+         "freq_end": 4800,
+         "duration": 0.6,
+         "gain_db": -12,
+         "vibrato": {
+          "rate_hz": 28,
+          "depth_cents": 180
+         },
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.25
+         }
+        }
+       ]
+      },
+      "output": "{tmp}/game_teleport.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/game_teleport.wav",
+      "operations": [
+       {
+        "op": "fade_out",
+        "seconds": 0.004
+       },
+       {
+        "op": "normalize_lufs",
+        "lufs": -16,
+        "measure": "momentary_max",
+        "ceiling_db": -1.0
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ]
+  }
+ ]
+}

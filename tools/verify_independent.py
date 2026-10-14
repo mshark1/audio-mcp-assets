@@ -81,6 +81,12 @@ CHECKS = {
         ("first non-zero sample at 1.5 s", approx(np.flatnonzero(np.abs(x[:, 0]) > 1e-6)[0] / sr, 1.5, 0.002)),
         ("last non-zero sample 1.0 s before end", approx((len(x) - 1 - np.flatnonzero(np.abs(x[:, 0]) > 1e-6)[-1]) / sr, 1.0, 0.002)),
     ],
+    "problem_loop_seam_click.wav": lambda x, sr: [
+        ("seam jump |last - first| > 0.3 (an audible click)", abs(float(x[-1, 0] - x[0, 0])) > 0.3)
+    ],
+    "fixed_loop_seamless.wav": lambda x, sr: [
+        ("seam jump no bigger than a normal sample step", abs(float(x[-1, 0] - x[0, 0])) <= np.abs(np.diff(x[:, 0])).max())
+    ],
     "rhythm_clicks_120bpm_16beats.wav": lambda x, sr: [
         ("clicks start every 0.500 s", _click_starts(x[:, 0], sr)),
     ],

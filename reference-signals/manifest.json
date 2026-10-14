@@ -1504,7 +1504,7 @@
       },
       {
        "severity": "info",
-       "message": "Noise floor around -22.9 dBFS in the quietest parts; hiss or background noise may be audible."
+       "message": "Noise floor around -22.8 dBFS in the quietest parts; hiss or background noise may be audible."
       },
       {
        "severity": "warning",
@@ -1512,7 +1512,7 @@
       },
       {
        "severity": "info",
-       "message": "Almost no content above 9.1 kHz; could be a low-bitrate or upsampled source."
+       "message": "Almost no content above 15.2 kHz; could be a low-bitrate or upsampled source."
       }
      ],
      "pass": true
@@ -1723,11 +1723,7 @@
       },
       {
        "severity": "info",
-       "message": "Noise floor around -42.2 dBFS in the quietest parts; hiss or background noise may be audible."
-      },
-      {
-       "severity": "warning",
-       "message": "44.0% of the energy is below 20 Hz (rumble/DC); try highpass at ~30 Hz."
+       "message": "Noise floor around -42.6 dBFS in the quietest parts; hiss or background noise may be audible."
       }
      ],
      "pass": true
@@ -1831,16 +1827,17 @@
   },
   {
    "file": "problem_loop_seam_click.wav",
-   "description": "PROBLEM FILE: 2 s of brown noise cut out of a longer recording and meant as a loop; the end doesn't meet the start, so it clicks every time it repeats. Pair with fixed_loop_seamless.wav.",
+   "description": "PROBLEM FILE: a 110 Hz drone meant to loop, but cut mid-cycle (2.0025 s = 220.275 periods), so the waveform jumps from about +0.5 back to 0 at every repeat: an audible click. Pair with fixed_loop_seamless.wav.",
    "format": {
     "format": "WAV",
     "subtype": "PCM_24",
     "sample_rate": 48000,
     "channels": 1,
-    "duration_s": 2.0
+    "duration_s": 2.002
    },
    "ground_truth": {
-    "loop_click": true
+    "loop_click": true,
+    "periods": 220.275
    },
    "verification": [
     {
@@ -1856,11 +1853,12 @@
      "args": {
       "spec": {
        "sample_rate": 48000,
-       "seed": 10,
+       "normalize_peak_db": -6,
        "layers": [
         {
-         "wave": "brown",
-         "duration": 3,
+         "wave": "sine",
+         "freq": 110,
+         "duration": 2.0025,
          "envelope": {
           "attack": 0,
           "release": 0
@@ -1868,21 +1866,6 @@
         }
        ]
       },
-      "output": "{tmp}/brown3.wav",
-      "overwrite": true
-     }
-    },
-    {
-     "tool": "audio_process",
-     "args": {
-      "path": "{tmp}/brown3.wav",
-      "operations": [
-       {
-        "op": "crop",
-        "start": 0.37,
-        "end": 2.37
-       }
-      ],
       "output": "{out}",
       "overwrite": true
      }
@@ -1891,13 +1874,13 @@
   },
   {
    "file": "fixed_loop_seamless.wav",
-   "description": "FIXED: problem_loop_seam_click.wav after a 100 ms equal-power loop crossfade; it now repeats without a click.",
+   "description": "FIXED: problem_loop_seam_click.wav after a 100 ms equal-power loop crossfade; the seam is now continuous and it repeats without a click.",
    "format": {
     "format": "WAV",
     "subtype": "PCM_24",
     "sample_rate": 48000,
     "channels": 1,
-    "duration_s": 1.9
+    "duration_s": 1.903
    },
    "ground_truth": {
     "loop_click": false
@@ -1916,11 +1899,12 @@
      "args": {
       "spec": {
        "sample_rate": 48000,
-       "seed": 10,
+       "normalize_peak_db": -6,
        "layers": [
         {
-         "wave": "brown",
-         "duration": 3,
+         "wave": "sine",
+         "freq": 110,
+         "duration": 2.0025,
          "envelope": {
           "attack": 0,
           "release": 0
@@ -1928,20 +1912,15 @@
         }
        ]
       },
-      "output": "{tmp}/brown3.wav",
+      "output": "{tmp}/hum_loop.wav",
       "overwrite": true
      }
     },
     {
      "tool": "audio_process",
      "args": {
-      "path": "{tmp}/brown3.wav",
+      "path": "{tmp}/hum_loop.wav",
       "operations": [
-       {
-        "op": "crop",
-        "start": 0.37,
-        "end": 2.37
-       },
        {
         "op": "loop_crossfade",
         "seconds": 0.1
