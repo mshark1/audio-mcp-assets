@@ -1,0 +1,193 @@
+{"id": "pitch.note_name.01", "answer": "E2", "expected": "E2", "evidence": {"hz": 82.4, "note": "E2", "cents": 0}}
+{"id": "pitch.note_name.02", "answer": "G#2", "expected": "G#2", "evidence": {"hz": 103.8, "note": "G#2", "cents": 0}}
+{"id": "pitch.note_name.03", "answer": "C3", "expected": "C3", "evidence": {"hz": 130.9, "note": "C3", "cents": 1}}
+{"id": "pitch.note_name.04", "answer": "D#3", "expected": "D#3", "evidence": {"hz": 155.6, "note": "D#3", "cents": 0}}
+{"id": "pitch.note_name.05", "answer": "F3", "expected": "F3", "evidence": {"hz": 174.5, "note": "F3", "cents": -1}}
+{"id": "pitch.note_name.06", "answer": "A3", "expected": "A3", "evidence": {"hz": 220.0, "note": "A3", "cents": 0}}
+{"id": "pitch.note_name.07", "answer": "B3", "expected": "B3", "evidence": {"hz": 246.8, "note": "B3", "cents": -1}}
+{"id": "pitch.note_name.08", "answer": "C#4", "expected": "C#4", "evidence": {"hz": 277.2, "note": "C#4", "cents": 0}}
+{"id": "pitch.note_name.09", "answer": "D4", "expected": "D4", "evidence": {"hz": 293.7, "note": "D4", "cents": 0}}
+{"id": "pitch.note_name.10", "answer": "F#4", "expected": "F#4", "evidence": {"hz": 370.0, "note": "F#4", "cents": 0}}
+{"id": "pitch.note_name.11", "answer": "G4", "expected": "G4", "evidence": {"hz": 391.6, "note": "G4", "cents": -2}}
+{"id": "pitch.note_name.12", "answer": "A#4", "expected": "A#4", "evidence": {"hz": 466.2, "note": "A#4", "cents": 0}}
+{"id": "pitch.note_name.13", "answer": "C5", "expected": "C5", "evidence": {"hz": 523.2, "note": "C5", "cents": 0}}
+{"id": "pitch.note_name.14", "answer": "D#5", "expected": "D#5", "evidence": {"hz": 621.2, "note": "D#5", "cents": -3}}
+{"id": "pitch.note_name.15", "answer": "E5", "expected": "E5", "evidence": {"hz": 659.3, "note": "E5", "cents": 0}}
+{"id": "pitch.note_name.16", "answer": "G5", "expected": "G5", "evidence": {"hz": 785.4, "note": "G5", "cents": 3}}
+{"id": "pitch.note_name.17", "answer": "A5", "expected": "A5", "evidence": {"hz": 880.2, "note": "A5", "cents": 0}}
+{"id": "pitch.note_name.18", "answer": "B5", "expected": "B5", "evidence": {"hz": 987.9, "note": "B5", "cents": 0}}
+{"id": "pitch.note_name.19", "answer": "C#6", "expected": "C#6", "evidence": {"hz": 1110.9, "note": "C#6", "cents": 3}}
+{"id": "pitch.note_name.20", "answer": "D6", "expected": "D6", "evidence": {"hz": 1174.1, "note": "D6", "cents": -1}}
+{"id": "pitch.note_name.21", "answer": "F6", "expected": "F6", "evidence": {"hz": 1397.2, "note": "F6", "cents": 0}}
+{"id": "pitch.note_name.22", "answer": "G#6", "expected": "G#6", "evidence": {"hz": 1652.9, "note": "G#6", "cents": -9}}
+{"id": "pitch.note_name.23", "answer": "A6", "expected": "A6", "evidence": {"hz": 1760.6, "note": "A6", "cents": 1}}
+{"id": "pitch.note_name.24", "answer": "C7", "expected": "C7", "evidence": {"hz": 2090.2, "note": "C7", "cents": -2}}
+{"id": "pitch.note_name.25", "answer": "A4", "expected": "A4", "evidence": {"hz": 440.0, "note": "A4", "cents": 0}}
+{"id": "pitch.note_name.26", "answer": "B5", "expected": "B5", "evidence": {"hz": 997.0, "note": "B5", "cents": 16}}
+{"id": "pitch.frequency.01", "answer": 150.0, "expected": 150.0, "evidence": {"hz": 150.0, "note": "D3", "cents": 37}}
+{"id": "pitch.frequency.02", "answer": 300.0, "expected": 300.0, "evidence": {"hz": 300.0, "note": "D4", "cents": 37}}
+{"id": "pitch.frequency.03", "answer": 777.0, "expected": 777.0, "evidence": {"hz": 777.0, "note": "G5", "cents": -16}}
+{"id": "pitch.frequency.04", "answer": 1233.3, "expected": 1234.0, "evidence": {"hz": 1233.3, "note": "D#6", "cents": -16}}
+{"id": "pitch.frequency.05", "answer": 434.0, "expected": 434.0, "evidence": {"hz": 434.0, "note": "A4", "cents": -24}}
+{"id": "pitch.frequency.06", "answer": 446.0, "expected": 446.0, "evidence": {"hz": 446.0, "note": "A4", "cents": 23}}
+{"id": "pitch.frequency.07", "answer": 997.0, "expected": 997.0, "evidence": {"hz": 997.0, "note": "B5", "cents": 16}}
+{"id": "pitch.frequency.08", "answer": 440.0, "expected": 440.0, "evidence": {"hz": 440.0, "note": "A4", "cents": 0}}
+{"id": "pitch.frequency.09", "answer": 130.9, "expected": 130.81, "evidence": {"hz": 130.9, "note": "C3", "cents": 1}}
+{"id": "pitch.frequency.10", "answer": 659.3, "expected": 659.26, "evidence": {"hz": 659.3, "note": "E5", "cents": 0}}
+{"id": "pitch.frequency.11", "answer": 1174.1, "expected": 1174.66, "evidence": {"hz": 1174.1, "note": "D6", "cents": -1}}
+{"id": "pitch.frequency.12", "answer": 103.8, "expected": 103.83, "evidence": {"hz": 103.8, "note": "G#2", "cents": 0}}
+{"id": "pitch.higher.01", "answer": "B", "expected": "B", "evidence": {"hz": [130.9, 155.6]}}
+{"id": "pitch.higher.02", "answer": "A", "expected": "A", "evidence": {"hz": [277.2, 246.8]}}
+{"id": "pitch.higher.03", "answer": "B", "expected": "B", "evidence": {"hz": [391.6, 466.2]}}
+{"id": "pitch.higher.04", "answer": "A", "expected": "A", "evidence": {"hz": [880.2, 785.4]}}
+{"id": "pitch.higher.05", "answer": "B", "expected": "B", "evidence": {"hz": [466.2, 523.2]}}
+{"id": "pitch.higher.06", "answer": "A", "expected": "A", "evidence": {"hz": [659.3, 621.2]}}
+{"id": "pitch.higher.07", "answer": "B", "expected": "B", "evidence": {"hz": [174.5, 220.0]}}
+{"id": "pitch.higher.08", "answer": "A", "expected": "A", "evidence": {"hz": [293.7, 277.2]}}
+{"id": "pitch.higher.09", "answer": "B", "expected": "B", "evidence": {"hz": [82.4, 659.3]}}
+{"id": "pitch.higher.10", "answer": "A", "expected": "A", "evidence": {"hz": [1760.6, 1397.2]}}
+{"id": "pitch.higher.11", "answer": "A", "expected": "A", "evidence": {"hz": [103.8, 82.4]}}
+{"id": "pitch.higher.12", "answer": "B", "expected": "B", "evidence": {"hz": [987.9, 1110.9]}}
+{"id": "pitch.higher.13", "answer": "B", "expected": "B", "evidence": {"hz": [440.0, 446.0]}}
+{"id": "pitch.higher.14", "answer": "B", "expected": "B", "evidence": {"hz": [434.0, 440.0]}}
+{"id": "pitch.higher.15", "answer": "A", "expected": "A", "evidence": {"hz": [446.0, 434.0]}}
+{"id": "loudness.lufs.01", "answer": -15.0, "expected": -15.0, "evidence": {"lufs_integrated": -15.0}}
+{"id": "loudness.lufs.02", "answer": -18.0, "expected": -18.0, "evidence": {"lufs_integrated": -18.0}}
+{"id": "loudness.lufs.03", "answer": -21.0, "expected": -21.0, "evidence": {"lufs_integrated": -21.0}}
+{"id": "loudness.lufs.04", "answer": -26.0, "expected": -26.0, "evidence": {"lufs_integrated": -26.0}}
+{"id": "loudness.lufs.05", "answer": -30.0, "expected": -30.0, "evidence": {"lufs_integrated": -30.0}}
+{"id": "loudness.lufs.06", "answer": -35.0, "expected": -35.0, "evidence": {"lufs_integrated": -35.0}}
+{"id": "loudness.lufs.07", "answer": -16.0, "expected": -16.0, "evidence": {"lufs_integrated": -16.0}}
+{"id": "loudness.lufs.08", "answer": -23.0, "expected": -23.0, "evidence": {"lufs_integrated": -23.0}}
+{"id": "loudness.lufs.09", "answer": -40.0, "expected": -40.0, "evidence": {"lufs_integrated": -40.0}}
+{"id": "loudness.lufs.10", "answer": -23.0, "expected": -23.0, "evidence": {"lufs_integrated": -23.0}}
+{"id": "loudness.louder.01", "answer": "A", "expected": "A", "evidence": {"lufs": [-18.0, -21.0]}}
+{"id": "loudness.louder.02", "answer": "B", "expected": "B", "evidence": {"lufs": [-26.0, -15.0]}}
+{"id": "loudness.louder.03", "answer": "B", "expected": "B", "evidence": {"lufs": [-35.0, -30.0]}}
+{"id": "loudness.louder.04", "answer": "A", "expected": "A", "evidence": {"lufs": [-16.0, -23.0]}}
+{"id": "loudness.louder.05", "answer": "A", "expected": "A", "evidence": {"lufs": [-15.01, -18.0]}}
+{"id": "loudness.louder.06", "answer": "B", "expected": "B", "evidence": {"lufs": [-42.03, -15.01]}}
+{"id": "loudness.louder.07", "answer": "A", "expected": "A", "evidence": {"lufs": [-21.0, -31.29]}}
+{"id": "loudness.louder.08", "answer": "B", "expected": "B", "evidence": {"lufs": [-39.69, -35.0]}}
+{"id": "loudness.louder.09", "answer": "B", "expected": "B", "evidence": {"lufs": [-31.29, -26.0]}}
+{"id": "loudness.louder.10", "answer": "A", "expected": "A", "evidence": {"lufs": [-30.0, -42.03]}}
+{"id": "loudness.rms.01", "answer": -20.0, "expected": -20.0, "evidence": {"rms_dbfs": -20.0}}
+{"id": "loudness.rms.02", "answer": -20.0, "expected": -20.0, "evidence": {"rms_dbfs": -20.0}}
+{"id": "loudness.rms.03", "answer": -23.01, "expected": -23.01, "evidence": {"rms_dbfs": -23.01}}
+{"id": "loudness.rms.04", "answer": -15.02, "expected": -15.01, "evidence": {"rms_dbfs": -15.02}}
+{"id": "loudness.rms.05", "answer": -30.0, "expected": -30.0, "evidence": {"rms_dbfs": -30.0}}
+{"id": "loudness.rms.06", "answer": -16.0, "expected": -16.0, "evidence": {"rms_dbfs": -16.0}}
+{"id": "loudness.rms.07", "answer": -20.0, "expected": -20.0, "evidence": {"rms_dbfs": -20.0}}
+{"id": "loudness.sample_peak.01", "answer": -20.0, "expected": -20.0, "evidence": {"peak_dbfs": -20.0}}
+{"id": "loudness.sample_peak.02", "answer": -12.0, "expected": -12.0, "evidence": {"peak_dbfs": -12.0}}
+{"id": "loudness.sample_peak.03", "answer": -6.0, "expected": -6.0, "evidence": {"peak_dbfs": -6.0}}
+{"id": "loudness.sample_peak.04", "answer": -12.0, "expected": -12.0, "evidence": {"peak_dbfs": -12.0}}
+{"id": "loudness.sample_peak.05", "answer": -1.0, "expected": -1.0, "evidence": {"peak_dbfs": -1.0}}
+{"id": "loudness.true_peak.01", "answer": 2.03, "expected": 2.01, "evidence": {"true_peak_dbtp": 2.03}}
+{"id": "loudness.true_peak_over.01", "answer": "yes", "expected": "yes", "evidence": {"true_minus_sample_db": 3.03}}
+{"id": "loudness.true_peak_over.02", "answer": "yes", "expected": "no", "evidence": {"true_minus_sample_db": 1.08}}
+{"id": "loudness.true_peak_over.03", "answer": "no", "expected": "no", "evidence": {"true_minus_sample_db": 0.01}}
+{"id": "loudness.true_peak_over.04", "answer": "no", "expected": "no", "evidence": {"true_minus_sample_db": 0.01}}
+{"id": "defects.clipping.01", "answer": "yes", "expected": "yes", "evidence": {"clipped_samples": 94275}}
+{"id": "defects.clipping.02", "answer": "yes", "expected": "yes", "evidence": {"clipped_samples": 38387}}
+{"id": "defects.clipping.03", "answer": "yes", "expected": "yes", "evidence": {"clipped_samples": 47}}
+{"id": "defects.clipping.04", "answer": "no", "expected": "no", "evidence": {"clipped_samples": 0}}
+{"id": "defects.clipping.05", "answer": "no", "expected": "no", "evidence": {"clipped_samples": 0}}
+{"id": "defects.clipping.06", "answer": "no", "expected": "no", "evidence": {"clipped_samples": 0}}
+{"id": "defects.clipping.07", "answer": "no", "expected": "no", "evidence": {"clipped_samples": 0}}
+{"id": "defects.clipping.08", "answer": "no", "expected": "no", "evidence": {"clipped_samples": 0}}
+{"id": "defects.dc_offset.01", "answer": "yes", "expected": "yes", "evidence": {"dc_offset": 0.1}}
+{"id": "defects.dc_offset.02", "answer": "yes", "expected": "yes", "evidence": {"dc_offset": 0.05}}
+{"id": "defects.dc_offset.03", "answer": "no", "expected": "no", "evidence": {"dc_offset": 0.0}}
+{"id": "defects.dc_offset.04", "answer": "no", "expected": "no", "evidence": {"dc_offset": 0.0}}
+{"id": "defects.dc_offset.05", "answer": "no", "expected": "no", "evidence": {"dc_offset": 0.0}}
+{"id": "defects.dc_offset.06", "answer": "no", "expected": "no", "evidence": {"dc_offset": 0.0001}}
+{"id": "defects.mains_hum.01", "answer": "60 Hz", "expected": "60 Hz", "evidence": {"issue": "Mains hum at 60 Hz"}}
+{"id": "defects.mains_hum.02", "answer": "50 Hz", "expected": "50 Hz", "evidence": {"issue": "Mains hum at 50 Hz"}}
+{"id": "defects.mains_hum.03", "answer": "60 Hz", "expected": "60 Hz", "evidence": {"issue": "Mains hum at 60 Hz"}}
+{"id": "defects.mains_hum.04", "answer": "none", "expected": "none", "evidence": {"issue": null}}
+{"id": "defects.mains_hum.05", "answer": "none", "expected": "none", "evidence": {"issue": null}}
+{"id": "defects.mains_hum.06", "answer": "none", "expected": "none", "evidence": {"issue": null}}
+{"id": "defects.mains_hum.07", "answer": "none", "expected": "none", "evidence": {"issue": null}}
+{"id": "defects.abrupt_start.01", "answer": "yes", "expected": "yes", "evidence": {"issue": true, "start_amplitude": 0.2385}}
+{"id": "defects.abrupt_start.02", "answer": "yes", "expected": "yes", "evidence": {"issue": true, "start_amplitude": 0.8913}}
+{"id": "defects.abrupt_start.03", "answer": "no", "expected": "no", "evidence": {"issue": false, "start_amplitude": 0.0}}
+{"id": "defects.abrupt_start.04", "answer": "no", "expected": "no", "evidence": {"issue": false, "start_amplitude": 0.0}}
+{"id": "defects.abrupt_start.05", "answer": "no", "expected": "no", "evidence": {"issue": false, "start_amplitude": 0.0}}
+{"id": "defects.loop_click.01", "answer": "yes", "expected": "yes", "evidence": {"sample_jump": 0.4961, "typical_step": 0.0072, "level_jump_db": -0.0, "likely_click": true}}
+{"id": "defects.loop_click.02", "answer": "no", "expected": "no", "evidence": {"sample_jump": 0.0011, "typical_step": 0.0072, "level_jump_db": -0.5, "likely_click": false}}
+{"id": "defects.loop_click.03", "answer": "no", "expected": "no", "evidence": {"sample_jump": 0.0233, "typical_step": 0.0233, "level_jump_db": 0.0, "likely_click": false}}
+{"id": "defects.loop_click.04", "answer": "yes", "expected": "yes", "evidence": {"sample_jump": 0.8909, "typical_step": 0.0233, "level_jump_db": 0.0, "likely_click": true}}
+{"id": "defects.loop_click.05", "answer": "no", "expected": "no", "evidence": {"sample_jump": 0.0, "typical_step": 0.224, "level_jump_db": 1.7, "likely_click": false}}
+{"id": "time.duration.01", "answer": 10.0, "expected": 10.0, "evidence": {"duration_s": 10.0}}
+{"id": "time.duration.02", "answer": 1.0, "expected": 1.0, "evidence": {"duration_s": 1.0}}
+{"id": "time.duration.03", "answer": 2.002, "expected": 2.002, "evidence": {"duration_s": 2.002}}
+{"id": "time.duration.04", "answer": 3.0, "expected": 3.0, "evidence": {"duration_s": 3.0}}
+{"id": "time.duration.05", "answer": 5.2, "expected": 5.2, "evidence": {"duration_s": 5.2}}
+{"id": "time.duration.06", "answer": 6.4, "expected": 6.4, "evidence": {"duration_s": 6.4}}
+{"id": "time.duration.07", "answer": 8.0, "expected": 8.0, "evidence": {"duration_s": 8.0}}
+{"id": "time.duration.08", "answer": 30.0, "expected": 30.0, "evidence": {"duration_s": 30.0}}
+{"id": "time.duration.09", "answer": 1.55, "expected": 1.55, "evidence": {"duration_s": 1.55}}
+{"id": "time.duration.10", "answer": 0.8, "expected": 0.8, "evidence": {"duration_s": 0.8}}
+{"id": "time.leading_silence.01", "answer": 1.5, "expected": 1.5, "evidence": {"leading_s": 1.5}}
+{"id": "time.trailing_silence.01", "answer": 1.0, "expected": 1.0, "evidence": {"trailing_s": 1.0}}
+{"id": "time.leading_silence.02", "answer": 0.5, "expected": 0.5, "evidence": {"leading_s": 0.5}}
+{"id": "time.trailing_silence.02", "answer": 0.25, "expected": 0.25, "evidence": {"trailing_s": 0.25}}
+{"id": "time.all_silent.01", "answer": "yes", "expected": "yes", "evidence": {"all_silent": true}}
+{"id": "time.all_silent.02", "answer": "no", "expected": "no", "evidence": {"all_silent": null}}
+{"id": "time.onset_count.01", "answer": 16, "expected": 16.0, "evidence": {"event_count": 16, "rhythm.onset_count": 16}}
+{"id": "time.onset_count.02", "answer": 3, "expected": 3.0, "evidence": {"event_count": 3, "rhythm.onset_count": 3}}
+{"id": "time.onset_count.03", "answer": 5, "expected": 5.0, "evidence": {"event_count": 5, "rhythm.onset_count": 5}}
+{"id": "time.onset_count.04", "answer": 7, "expected": 7.0, "evidence": {"event_count": 7, "rhythm.onset_count": 7}}
+{"id": "time.onset_count.05", "answer": 8, "expected": 8.0, "evidence": {"event_count": 8, "rhythm.onset_count": 8}}
+{"id": "time.onset_count.06", "answer": 13, "expected": 13, "evidence": {"event_count": 13, "rhythm.onset_count": 13}}
+{"id": "time.onset_count.07", "answer": 8, "expected": 8, "evidence": {"event_count": 8, "rhythm.onset_count": 9}}
+{"id": "time.tempo.01", "answer": 119.9, "expected": 120.0, "evidence": {"tempo_bpm": 119.9, "onset_count": 16}}
+{"id": "time.tempo.02", "answer": 90.2, "expected": 90.0, "evidence": {"tempo_bpm": 90.2, "onset_count": 8}}
+{"id": "time.tempo.03", "answer": 100.2, "expected": 100.0, "evidence": {"tempo_bpm": 100.2, "onset_count": 8}}
+{"id": "time.tempo.04", "answer": null, "expected": 150.0, "evidence": {"tempo_bpm": null, "onset_count": 8}}
+{"id": "time.impulse_time.01", "answer": 0.49, "expected": 0.5, "evidence": {"events": ["0.49-0.52s | -32dB | noisy | very bright/harsh | sharp attack"]}}
+{"id": "time.impulse_time.02", "answer": 0.24, "expected": 0.25, "evidence": {"events": ["0.24-0.27s | -32dB | noisy | very bright/harsh | sharp attack"]}}
+{"id": "time.impulse_time.03", "answer": 1.19, "expected": 1.2, "evidence": {"events": ["1.19-1.22s | -32dB | noisy | very bright/harsh | sharp attack"]}}
+{"id": "stereo.correlation.01", "answer": "positive", "expected": "positive", "evidence": {"correlation": 1.0}}
+{"id": "stereo.correlation.02", "answer": "negative", "expected": "negative", "evidence": {"correlation": -1.0}}
+{"id": "stereo.correlation.03", "answer": "near zero", "expected": "near zero", "evidence": {"correlation": -0.0}}
+{"id": "stereo.correlation.04", "answer": "negative", "expected": "negative", "evidence": {"correlation": -1.0}}
+{"id": "stereo.correlation.05", "answer": "positive", "expected": "positive", "evidence": {"correlation": 1.0}}
+{"id": "stereo.channels.01", "answer": "left only", "expected": "left only", "evidence": {"correlation": null, "width": "one channel silent", "side_to_mid_db": 0.0, "balance_db": 168.81, "mono_sum_change_db": -3.01}}
+{"id": "stereo.channels.02", "answer": "right only", "expected": "right only", "evidence": {"correlation": null, "width": "one channel silent", "side_to_mid_db": 0.0, "balance_db": -167.56, "mono_sum_change_db": -3.01}}
+{"id": "stereo.channels.03", "answer": "both", "expected": "both", "evidence": {"correlation": 1.0, "width": "mono (identical channels)", "side_to_mid_db": -150.8, "balance_db": 0.0, "mono_sum_change_db": 0.0}}
+{"id": "stereo.channels.04", "answer": "both", "expected": "both", "evidence": {"correlation": -0.0, "width": "wide", "side_to_mid_db": 0.0, "balance_db": 0.01, "mono_sum_change_db": -3.01}}
+{"id": "stereo.channels.05", "answer": "both", "expected": "both", "evidence": {"correlation": -1.0, "width": "phase problem (negative correlation)", "side_to_mid_db": 168.8, "balance_db": 0.0, "mono_sum_change_db": -168.81}}
+{"id": "stereo.out_of_phase.01", "answer": "yes", "expected": "yes", "evidence": {"issue": true, "correlation": -1.0}}
+{"id": "stereo.out_of_phase.02", "answer": "yes", "expected": "yes", "evidence": {"issue": true, "correlation": -1.0}}
+{"id": "stereo.out_of_phase.03", "answer": "no", "expected": "no", "evidence": {"issue": false, "correlation": 1.0}}
+{"id": "stereo.out_of_phase.04", "answer": "no", "expected": "no", "evidence": {"issue": false, "correlation": -0.0}}
+{"id": "stereo.out_of_phase.05", "answer": "no", "expected": "no", "evidence": {"issue": false, "correlation": 1.0}}
+{"id": "spectrum.tone_or_noise.01", "answer": "tone", "expected": "tone", "evidence": {"character": "tonal"}}
+{"id": "spectrum.tone_or_noise.02", "answer": "noise", "expected": "noise", "evidence": {"character": "noise-like"}}
+{"id": "spectrum.tone_or_noise.03", "answer": "noise", "expected": "noise", "evidence": {"character": "noise-like"}}
+{"id": "spectrum.tone_or_noise.04", "answer": "noise", "expected": "noise", "evidence": {"character": "noise-like"}}
+{"id": "spectrum.tone_or_noise.05", "answer": "tone", "expected": "tone", "evidence": {"character": "tonal"}}
+{"id": "spectrum.tone_or_noise.06", "answer": "tone", "expected": "tone", "evidence": {"character": "tonal"}}
+{"id": "spectrum.tone_or_noise.07", "answer": "tone", "expected": "tone", "evidence": {"character": "tonal"}}
+{"id": "spectrum.tone_or_noise.08", "answer": "noise", "expected": "noise", "evidence": {"character": "noise-like"}}
+{"id": "spectrum.noise_colour.01", "answer": "white", "expected": "white", "evidence": {"sub": 0.2, "bass": 0.8, "low_mid": 1.1, "mid": 6.2, "high_mid": 8.3, "presence": 8.4, "brilliance": 58.3}}
+{"id": "spectrum.noise_colour.02", "answer": "pink", "expected": "pink", "evidence": {"sub": 15.2, "bass": 19.7, "low_mid": 9.7, "mid": 19.6, "high_mid": 9.7, "presence": 5.7, "brilliance": 16.9}}
+{"id": "spectrum.noise_colour.03", "answer": "pink", "expected": "pink", "evidence": {"sub": 16.2, "bass": 17.5, "low_mid": 9.6, "mid": 20.1, "high_mid": 10.0, "presence": 5.7, "brilliance": 17.4}}
+{"id": "spectrum.noise_colour.04", "answer": "white", "expected": "white", "evidence": {"sub": 0.2, "bass": 0.8, "low_mid": 1.1, "mid": 6.1, "high_mid": 8.4, "presence": 8.3, "brilliance": 58.3}}
+{"id": "spectrum.noise_colour.05", "answer": "pink", "expected": "pink", "evidence": {"sub": 16.6, "bass": 18.9, "low_mid": 9.5, "mid": 18.9, "high_mid": 9.8, "presence": 5.8, "brilliance": 16.7}}
+{"id": "spectrum.noise_colour.06", "answer": "brown", "expected": "brown", "evidence": {"sub": 59.0, "bass": 27.5, "low_mid": 4.8, "mid": 3.4, "high_mid": 0.6, "presence": 0.2, "brilliance": 0.3}}
+{"id": "spectrum.noise_colour.07", "answer": "pink", "expected": "pink", "evidence": {"sub": 14.4, "bass": 19.4, "low_mid": 9.3, "mid": 20.1, "high_mid": 10.0, "presence": 5.7, "brilliance": 17.1}}
+{"id": "spectrum.chord_or_single.01", "answer": "chord", "expected": "chord", "evidence": {"polyphony_likely": true}}
+{"id": "spectrum.chord_or_single.02", "answer": "single note", "expected": "chord", "evidence": {"polyphony_likely": false}}
+{"id": "spectrum.chord_or_single.03", "answer": "chord", "expected": "chord", "evidence": {"polyphony_likely": true}}
+{"id": "spectrum.chord_or_single.04", "answer": "single note", "expected": "single note", "evidence": {"polyphony_likely": false}}
+{"id": "spectrum.chord_or_single.05", "answer": "single note", "expected": "single note", "evidence": {"polyphony_likely": false}}
+{"id": "spectrum.chord_or_single.06", "answer": "single note", "expected": "single note", "evidence": {"polyphony_likely": false}}
+{"id": "spectrum.chord_or_single.07", "answer": "single note", "expected": "single note", "evidence": {"polyphony_likely": false}}
+{"id": "melody.transcription.01", "answer": ["C4", "C#4", "D4", "D#4", "E4", "F4", "F#4", "G4", "G#4", "A4", "A#4", "B4", "C5"], "expected": ["C4", "C#4", "D4", "D#4", "E4", "F4", "F#4", "G4", "G#4", "A4", "A#4", "B4", "C5"], "evidence": {"as_text": "C4(0.38) C#4(0.39) D4(0.39) D#4(0.4) E4(0.4) F4(0.4) F#4(0.4) G4(0.4) G#4(0.4) A4(0.4) A#4(0.4) B4(0.4) C5(0.38)"}}
+{"id": "melody.transcription.02", "answer": ["E4", "D4", "C4", "D4", "E4", "E4", "E4", "D4", "D4", "D4", "E4", "G4", "G4"], "expected": ["E4", "D4", "C4", "D4", "E4", "E4", "E4", "D4", "D4", "D4", "E4", "G4", "G4"], "evidence": {"as_text": "E4(0.39) D4(0.39) C4(0.38) D4(0.39) E4(0.41) E4(0.39) E4(0.79) D4(0.41) D4(0.38) D4(0.8) E4(0.39) G4(0.4) G4(0.78)"}}
+{"id": "melody.transcription.03", "answer": ["C4", "C4", "G4", "G4", "A4", "A4", "G4"], "expected": ["C4", "C4", "G4", "G4", "A4", "A4", "G4"], "evidence": {"as_text": "C4(0.38) C4(0.38) G4(0.39) G4(0.41) A4(0.39) A4(0.41) G4(0.38)"}}
+{"id": "melody.transcription.04", "answer": ["C4", "D4", "E4", "C4", "D4", "E4", "C4"], "expected": ["C4", "D4", "E4", "C4", "C4", "D4", "E4", "C4"], "evidence": {"as_text": "C4(0.33) D4(0.34) E4(0.35) C4(0.68) D4(0.35) E4(0.34) C4(0.3)"}}
+{"id": "melody.transcription.05", "answer": ["A4", "G4", "F4", "D#4", "C#4", "B3"], "expected": ["A4", "G4", "F4", "D#4", "C#4", "B3"], "evidence": {"as_text": "A4(0.29) G4(0.3) F4(0.3) D#4(0.29) C#4(0.28) B3(0.27)"}}

@@ -80,6 +80,18 @@ notifications, coin, jump, laser, explosion and more), also CC0 and synthesized 
 listened to by a person, and checked for resemblance to famous game sounds. Its README explains the provenance,
 including one design that was withdrawn for sounding like a famous effect.
 
+## Perception benchmark: can an AI hear these properties?
+
+[`perception-benchmark/`](perception-benchmark/) has 193 machine-gradable questions about 94 files (these reference
+signals plus 68 new stimuli), covering pitch, loudness, defects, timing, stereo, spectrum and melody. Every answer is
+known by construction and re-measured independently.
+
+- It scores native audio models and tool-using agents (an LLM calling audio-mcp) on identical items.
+- It complements SonicBench and PitchBench with engineering properties such as LUFS, true peak, clipping, hum and
+  loop seams, plus deliberate traps where peak and loudness, or brightness and pitch, disagree.
+- Measured baselines: random 23.4% (chance 24.6%), and a rule-based audio-mcp "tool ceiling" (not an LLM) at 98.2%.
+  The ceiling's four misses are documented as tool limitations.
+
 ## Rebuild or extend
 
 ```bash

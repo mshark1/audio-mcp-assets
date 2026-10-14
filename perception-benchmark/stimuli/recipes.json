@@ -1,0 +1,3699 @@
+{
+ "pack": {
+  "name": "audio-mcp perception benchmark stimuli",
+  "version": "1.0.0",
+  "description": "Extra stimuli for the perception benchmark: tones, comparison pairs, traps and distractors, each synthesized with audio-mcp from a recipe and verified.",
+  "made_with": "https://github.com/mshark1/audio-mcp"
+ },
+ "assets": [
+  {
+   "file": "stim_001.wav",
+   "key": "tone_E2_triangle",
+   "description": "Steady E2 (82.41 Hz) triangle wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "E2",
+    "frequency_hz": 82.41,
+    "wave": "triangle",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "triangle",
+         "freq": "E2",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "E2"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_002.wav",
+   "key": "tone_G#2_sine",
+   "description": "Steady G#2 (103.83 Hz) sine wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "G#2",
+    "frequency_hz": 103.83,
+    "wave": "sine",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": "G#2",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "G#2"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_003.wav",
+   "key": "tone_C3_saw",
+   "description": "Steady C3 (130.81 Hz) saw wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "C3",
+    "frequency_hz": 130.81,
+    "wave": "saw",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "saw",
+         "freq": "C3",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "C3"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_004.wav",
+   "key": "tone_D#3_sine",
+   "description": "Steady D#3 (155.56 Hz) sine wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "D#3",
+    "frequency_hz": 155.56,
+    "wave": "sine",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": "D#3",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "D#3"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_005.wav",
+   "key": "tone_F3_square",
+   "description": "Steady F3 (174.61 Hz) square wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "F3",
+    "frequency_hz": 174.61,
+    "wave": "square",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "square",
+         "freq": "F3",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "F3"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_006.wav",
+   "key": "tone_A3_triangle",
+   "description": "Steady A3 (220.00 Hz) triangle wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "A3",
+    "frequency_hz": 220.0,
+    "wave": "triangle",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "triangle",
+         "freq": "A3",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "A3"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_007.wav",
+   "key": "tone_B3_saw",
+   "description": "Steady B3 (246.94 Hz) saw wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "B3",
+    "frequency_hz": 246.94,
+    "wave": "saw",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "saw",
+         "freq": "B3",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "B3"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_008.wav",
+   "key": "tone_C#4_sine",
+   "description": "Steady C#4 (277.18 Hz) sine wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "C#4",
+    "frequency_hz": 277.18,
+    "wave": "sine",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": "C#4",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "C#4"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_009.wav",
+   "key": "tone_D4_square",
+   "description": "Steady D4 (293.66 Hz) square wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "D4",
+    "frequency_hz": 293.66,
+    "wave": "square",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "square",
+         "freq": "D4",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "D4"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_010.wav",
+   "key": "tone_F#4_triangle",
+   "description": "Steady F#4 (369.99 Hz) triangle wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "F#4",
+    "frequency_hz": 369.99,
+    "wave": "triangle",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "triangle",
+         "freq": "F#4",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "F#4"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_011.wav",
+   "key": "tone_G4_saw",
+   "description": "Steady G4 (392.00 Hz) saw wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "G4",
+    "frequency_hz": 392.0,
+    "wave": "saw",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "saw",
+         "freq": "G4",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "G4"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_012.wav",
+   "key": "tone_A#4_sine",
+   "description": "Steady A#4 (466.16 Hz) sine wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "A#4",
+    "frequency_hz": 466.16,
+    "wave": "sine",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": "A#4",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "A#4"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_013.wav",
+   "key": "tone_C5_triangle",
+   "description": "Steady C5 (523.25 Hz) triangle wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "C5",
+    "frequency_hz": 523.25,
+    "wave": "triangle",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "triangle",
+         "freq": "C5",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "C5"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_014.wav",
+   "key": "tone_D#5_square",
+   "description": "Steady D#5 (622.25 Hz) square wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "D#5",
+    "frequency_hz": 622.25,
+    "wave": "square",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "square",
+         "freq": "D#5",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "D#5"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_015.wav",
+   "key": "tone_E5_sine",
+   "description": "Steady E5 (659.26 Hz) sine wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "E5",
+    "frequency_hz": 659.26,
+    "wave": "sine",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": "E5",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "E5"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_016.wav",
+   "key": "tone_G5_saw",
+   "description": "Steady G5 (783.99 Hz) saw wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "G5",
+    "frequency_hz": 783.99,
+    "wave": "saw",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "saw",
+         "freq": "G5",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "G5"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_017.wav",
+   "key": "tone_A5_triangle",
+   "description": "Steady A5 (880.00 Hz) triangle wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "A5",
+    "frequency_hz": 880.0,
+    "wave": "triangle",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "triangle",
+         "freq": "A5",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "A5"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_018.wav",
+   "key": "tone_B5_sine",
+   "description": "Steady B5 (987.77 Hz) sine wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "B5",
+    "frequency_hz": 987.77,
+    "wave": "sine",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": "B5",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "B5"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_019.wav",
+   "key": "tone_C#6_square",
+   "description": "Steady C#6 (1108.73 Hz) square wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "C#6",
+    "frequency_hz": 1108.73,
+    "wave": "square",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "square",
+         "freq": "C#6",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "C#6"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_020.wav",
+   "key": "tone_D6_triangle",
+   "description": "Steady D6 (1174.66 Hz) triangle wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "D6",
+    "frequency_hz": 1174.66,
+    "wave": "triangle",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "triangle",
+         "freq": "D6",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "D6"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_021.wav",
+   "key": "tone_F6_sine",
+   "description": "Steady F6 (1396.91 Hz) sine wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "F6",
+    "frequency_hz": 1396.91,
+    "wave": "sine",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": "F6",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "F6"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_022.wav",
+   "key": "tone_G#6_saw",
+   "description": "Steady G#6 (1661.22 Hz) saw wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "G#6",
+    "frequency_hz": 1661.22,
+    "wave": "saw",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "saw",
+         "freq": "G#6",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "G#6"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_023.wav",
+   "key": "tone_A6_sine",
+   "description": "Steady A6 (1760.00 Hz) sine wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "A6",
+    "frequency_hz": 1760.0,
+    "wave": "sine",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": "A6",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "A6"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_024.wav",
+   "key": "tone_C7_sine",
+   "description": "Steady C7 (2093.00 Hz) sine wave, -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "note": "C7",
+    "frequency_hz": 2093.0,
+    "wave": "sine",
+    "peak_dbfs": -6.0,
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": "C7",
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.note",
+     "expect": "C7"
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -6.0,
+     "tol": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_025.wav",
+   "key": "freq_150_sine",
+   "description": "Steady 150 Hz sine wave (not on the equal-tempered grid), -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "frequency_hz": 150,
+    "wave": "sine",
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": 150,
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.hz",
+     "expect": 150,
+     "tol": 0.75
+    }
+   ]
+  },
+  {
+   "file": "stim_026.wav",
+   "key": "freq_300_triangle",
+   "description": "Steady 300 Hz triangle wave (not on the equal-tempered grid), -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "frequency_hz": 300,
+    "wave": "triangle",
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "triangle",
+         "freq": 300,
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.hz",
+     "expect": 300,
+     "tol": 1.5
+    }
+   ]
+  },
+  {
+   "file": "stim_027.wav",
+   "key": "freq_777_sine",
+   "description": "Steady 777 Hz sine wave (not on the equal-tempered grid), -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "frequency_hz": 777,
+    "wave": "sine",
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": 777,
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.hz",
+     "expect": 777,
+     "tol": 3.8850000000000002
+    }
+   ]
+  },
+  {
+   "file": "stim_028.wav",
+   "key": "freq_1234_square",
+   "description": "Steady 1234 Hz square wave (not on the equal-tempered grid), -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "frequency_hz": 1234,
+    "wave": "square",
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "square",
+         "freq": 1234,
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.hz",
+     "expect": 1234,
+     "tol": 6.17
+    }
+   ]
+  },
+  {
+   "file": "stim_029.wav",
+   "key": "freq_434_sine",
+   "description": "Steady 434 Hz sine wave (not on the equal-tempered grid), -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "frequency_hz": 434,
+    "wave": "sine",
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": 434,
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.hz",
+     "expect": 434,
+     "tol": 2.17
+    }
+   ]
+  },
+  {
+   "file": "stim_030.wav",
+   "key": "freq_446_sine",
+   "description": "Steady 446 Hz sine wave (not on the equal-tempered grid), -6 dBFS peak, 0.8 s.",
+   "ground_truth": {
+    "frequency_hz": 446,
+    "wave": "sine",
+    "duration_s": 0.8
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -6,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": 446,
+         "duration": 0.8,
+         "envelope": {
+          "attack": 0.01,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "pitch.median.hz",
+     "expect": 446,
+     "tol": 2.23
+    }
+   ]
+  },
+  {
+   "file": "stim_031.wav",
+   "key": "pink_-15LUFS",
+   "description": "Pink noise normalized to -15 LUFS integrated, 2 s.",
+   "ground_truth": {
+    "type": "pink",
+    "lufs_integrated": -15.0
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 115,
+       "layers": [
+        {
+         "wave": "pink",
+         "duration": 2
+        }
+       ]
+      },
+      "output": "{tmp}/pink.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/pink.wav",
+      "operations": [
+       {
+        "op": "normalize_lufs",
+        "lufs": -15
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "levels.lufs_integrated",
+     "expect": -15.0,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "file": "stim_032.wav",
+   "key": "pink_-18LUFS",
+   "description": "Pink noise normalized to -18 LUFS integrated, 2 s.",
+   "ground_truth": {
+    "type": "pink",
+    "lufs_integrated": -18.0
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 118,
+       "layers": [
+        {
+         "wave": "pink",
+         "duration": 2
+        }
+       ]
+      },
+      "output": "{tmp}/pink.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/pink.wav",
+      "operations": [
+       {
+        "op": "normalize_lufs",
+        "lufs": -18
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "levels.lufs_integrated",
+     "expect": -18.0,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "file": "stim_033.wav",
+   "key": "pink_-21LUFS",
+   "description": "Pink noise normalized to -21 LUFS integrated, 2 s.",
+   "ground_truth": {
+    "type": "pink",
+    "lufs_integrated": -21.0
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 121,
+       "layers": [
+        {
+         "wave": "pink",
+         "duration": 2
+        }
+       ]
+      },
+      "output": "{tmp}/pink.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/pink.wav",
+      "operations": [
+       {
+        "op": "normalize_lufs",
+        "lufs": -21
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "levels.lufs_integrated",
+     "expect": -21.0,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "file": "stim_034.wav",
+   "key": "pink_-26LUFS",
+   "description": "Pink noise normalized to -26 LUFS integrated, 2 s.",
+   "ground_truth": {
+    "type": "pink",
+    "lufs_integrated": -26.0
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 126,
+       "layers": [
+        {
+         "wave": "pink",
+         "duration": 2
+        }
+       ]
+      },
+      "output": "{tmp}/pink.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/pink.wav",
+      "operations": [
+       {
+        "op": "normalize_lufs",
+        "lufs": -26
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "levels.lufs_integrated",
+     "expect": -26.0,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "file": "stim_035.wav",
+   "key": "pink_-30LUFS",
+   "description": "Pink noise normalized to -30 LUFS integrated, 2 s.",
+   "ground_truth": {
+    "type": "pink",
+    "lufs_integrated": -30.0
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 130,
+       "layers": [
+        {
+         "wave": "pink",
+         "duration": 2
+        }
+       ]
+      },
+      "output": "{tmp}/pink.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/pink.wav",
+      "operations": [
+       {
+        "op": "normalize_lufs",
+        "lufs": -30
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "levels.lufs_integrated",
+     "expect": -30.0,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "file": "stim_036.wav",
+   "key": "pink_-35LUFS",
+   "description": "Pink noise normalized to -35 LUFS integrated, 2 s.",
+   "ground_truth": {
+    "type": "pink",
+    "lufs_integrated": -35.0
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 135,
+       "layers": [
+        {
+         "wave": "pink",
+         "duration": 2
+        }
+       ]
+      },
+      "output": "{tmp}/pink.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/pink.wav",
+      "operations": [
+       {
+        "op": "normalize_lufs",
+        "lufs": -35
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "levels.lufs_integrated",
+     "expect": -35.0,
+     "tol": 0.05
+    }
+   ]
+  },
+  {
+   "file": "stim_037.wav",
+   "key": "trap_sparse_clicks",
+   "description": "Six short noise clicks, one every 0.5 s, peak -1 dBFS: a high peak but little energy.",
+   "ground_truth": {
+    "peak_dbfs": -1.0,
+    "lufs_integrated_max": -24.0
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 6,
+       "duration": 3.0,
+       "layers": [
+        {
+         "wave": "noise",
+         "highpass": 1000,
+         "envelope": {
+          "attack": 0.0005,
+          "decay": 0.0,
+          "sustain": 1,
+          "release": 0.003
+         },
+         "sequence": [
+          [
+           "rest",
+           0.25
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.496
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.496
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.496
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.496
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.496
+          ],
+          [
+           "x",
+           0.004
+          ]
+         ]
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -1.0,
+     "tol": 0.01
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.lufs_integrated",
+     "max": -24.0
+    }
+   ]
+  },
+  {
+   "file": "stim_038.wav",
+   "key": "trap_quiet_with_click",
+   "description": "Very quiet pink noise with one near-full-scale click at 1.0 s.",
+   "ground_truth": {
+    "peak_dbfs_min": -1.5,
+    "lufs_integrated_max": -35.0
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 21,
+       "normalize_peak_db": null,
+       "layers": [
+        {
+         "wave": "pink",
+         "duration": 3,
+         "gain_db": -30
+        },
+        {
+         "wave": "impulse",
+         "start": 1.0,
+         "duration": 0.001,
+         "gain_db": -1
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "min": -1.5
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.lufs_integrated",
+     "max": -35.0
+    }
+   ]
+  },
+  {
+   "file": "stim_039.wav",
+   "key": "trap_dense_sine",
+   "description": "Steady 1 kHz sine at only -12 dBFS peak: a low peak but continuous energy.",
+   "ground_truth": {
+    "frequency_hz": 1000,
+    "peak_dbfs": -12.0,
+    "rms_dbfs": -15.01
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": -12,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": 1000,
+         "duration": 3
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "levels.peak_dbfs",
+     "expect": -12.0,
+     "tol": 0.01
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.rms_dbfs",
+     "expect": -15.01,
+     "tol": 0.02
+    }
+   ]
+  },
+  {
+   "file": "stim_040.wav",
+   "key": "white_-30rms",
+   "description": "White noise at -30 dBFS RMS, 2 s.",
+   "ground_truth": {
+    "type": "white",
+    "rms_dbfs": -30.0
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 31,
+       "layers": [
+        {
+         "wave": "noise",
+         "duration": 2
+        }
+       ]
+      },
+      "output": "{tmp}/n.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/n.wav",
+      "operations": [
+       {
+        "op": "normalize_rms",
+        "db": -30
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "levels.rms_dbfs",
+     "expect": -30.0,
+     "tol": 0.05
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.clipped_samples",
+     "expect": 0
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "spectrum.character",
+     "expect": "noise-like"
+    }
+   ]
+  },
+  {
+   "file": "stim_041.wav",
+   "key": "pink_-16rms",
+   "description": "Pink noise at -16 dBFS RMS, 2 s.",
+   "ground_truth": {
+    "type": "pink",
+    "rms_dbfs": -16.0
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 32,
+       "layers": [
+        {
+         "wave": "pink",
+         "duration": 2
+        }
+       ]
+      },
+      "output": "{tmp}/n.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/n.wav",
+      "operations": [
+       {
+        "op": "normalize_rms",
+        "db": -16
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "levels.rms_dbfs",
+     "expect": -16.0,
+     "tol": 0.05
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.clipped_samples",
+     "expect": 0
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "spectrum.character",
+     "expect": "noise-like"
+    }
+   ]
+  },
+  {
+   "file": "stim_042.wav",
+   "key": "brown_-20rms",
+   "description": "Brown noise at -20 dBFS RMS, 2 s.",
+   "ground_truth": {
+    "type": "brown",
+    "rms_dbfs": -20.0
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 33,
+       "layers": [
+        {
+         "wave": "brown",
+         "duration": 2
+        }
+       ]
+      },
+      "output": "{tmp}/n.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/n.wav",
+      "operations": [
+       {
+        "op": "normalize_rms",
+        "db": -20
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "levels.rms_dbfs",
+     "expect": -20.0,
+     "tol": 0.05
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "levels.clipped_samples",
+     "expect": 0
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "spectrum.character",
+     "expect": "noise-like"
+    }
+   ]
+  },
+  {
+   "file": "stim_043.wav",
+   "key": "clip_mild_sine",
+   "description": "PROBLEM: 330 Hz sine driven 2 dB past full scale (mild hard clipping), 2 s.",
+   "ground_truth": {
+    "clipped": true
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "normalize_peak_db": 2,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": 330,
+         "duration": 2
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "levels.clipped_samples",
+     "min": 1000
+    }
+   ]
+  },
+  {
+   "file": "stim_044.wav",
+   "key": "clip_pink",
+   "description": "PROBLEM: pink noise driven 3 dB past full scale, so its loudest peaks are clipped, 2 s.",
+   "ground_truth": {
+    "clipped": true
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 41,
+       "normalize_peak_db": 3,
+       "layers": [
+        {
+         "wave": "pink",
+         "duration": 2
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "levels.clipped_samples",
+     "min": 10
+    }
+   ]
+  },
+  {
+   "file": "stim_045.wav",
+   "key": "dc_on_noise",
+   "description": "PROBLEM: pink noise riding on a constant DC offset of +0.05, 2 s.",
+   "ground_truth": {
+    "dc_offset": 0.05
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 42,
+       "normalize_peak_db": null,
+       "layers": [
+        {
+         "wave": "pink",
+         "duration": 2,
+         "gain_db": -12
+        },
+        {
+         "wave": "dc",
+         "duration": 2,
+         "gain_db": -26.0206
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "levels.dc_offset",
+     "expect": 0.05,
+     "tol": 0.002
+    }
+   ]
+  },
+  {
+   "file": "stim_046.wav",
+   "key": "hum_50Hz",
+   "description": "PROBLEM: gated D5 tone over 50 Hz mains hum (with a 100 Hz harmonic) and faint hiss, 4 s.",
+   "ground_truth": {
+    "hum_hz": 50,
+    "hum_harmonics_hz": [
+     100
+    ]
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 43,
+       "layers": [
+        {
+         "wave": "sine",
+         "sequence": [
+          [
+           "D5",
+           0.5
+          ],
+          [
+           "rest",
+           0.5
+          ],
+          [
+           "D5",
+           0.5
+          ],
+          [
+           "rest",
+           0.5
+          ],
+          [
+           "D5",
+           0.5
+          ],
+          [
+           "rest",
+           0.5
+          ],
+          [
+           "D5",
+           0.5
+          ],
+          [
+           "rest",
+           0.5
+          ]
+         ]
+        },
+        {
+         "wave": "sine",
+         "freq": 50,
+         "duration": 4,
+         "gain_db": -18
+        },
+        {
+         "wave": "sine",
+         "freq": 100,
+         "duration": 4,
+         "gain_db": -26
+        },
+        {
+         "wave": "pink",
+         "duration": 4,
+         "gain_db": -36
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "issues",
+     "contains": "Mains hum at 50 Hz"
+    }
+   ]
+  },
+  {
+   "file": "stim_047.wav",
+   "key": "hum_60Hz_under_noise",
+   "description": "PROBLEM: 60 Hz hum (with a 120 Hz harmonic) under a bed of pink noise, 3 s.",
+   "ground_truth": {
+    "hum_hz": 60,
+    "hum_harmonics_hz": [
+     120
+    ]
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 44,
+       "layers": [
+        {
+         "wave": "pink",
+         "duration": 3
+        },
+        {
+         "wave": "sine",
+         "freq": 60,
+         "duration": 3,
+         "gain_db": -16
+        },
+        {
+         "wave": "sine",
+         "freq": 120,
+         "duration": 3,
+         "gain_db": -24
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "levels.clipped_samples",
+     "expect": 0
+    }
+   ]
+  },
+  {
+   "file": "stim_048.wav",
+   "key": "abrupt_sine",
+   "description": "PROBLEM: 500 Hz sine that starts at its peak (90 degrees phase) with no fade-in: a click at t=0. 1 s.",
+   "ground_truth": {
+    "abrupt_start": true
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": 500,
+         "phase": 90,
+         "duration": 1,
+         "envelope": {
+          "attack": 0,
+          "release": 0.05
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "edges.start_amplitude",
+     "min": 0.5
+    }
+   ]
+  },
+  {
+   "file": "stim_049.wav",
+   "key": "faded_burst",
+   "description": "Noise burst like problem_abrupt_start.wav but with a 20 ms fade-in, so it does not click. 1 s.",
+   "ground_truth": {
+    "abrupt_start": false
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 9,
+       "layers": [
+        {
+         "wave": "noise",
+         "duration": 1,
+         "envelope": {
+          "attack": 0.02,
+          "release": 0.2
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "edges.start_amplitude",
+     "max": 0.01
+    }
+   ]
+  },
+  {
+   "file": "stim_050.wav",
+   "key": "loop_clean_200Hz",
+   "description": "200 Hz sine, exactly 200 whole periods (1.0 s), no fades: loops without a seam.",
+   "ground_truth": {
+    "loop_click": false,
+    "periods": 200
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": 200,
+         "duration": 1.0,
+         "envelope": {
+          "attack": 0,
+          "release": 0
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "edges.loop_seam.likely_click",
+     "expect": false
+    }
+   ]
+  },
+  {
+   "file": "stim_051.wav",
+   "key": "loop_cut_200Hz",
+   "description": "PROBLEM: 200 Hz sine cut after 200.25 periods (1.00125 s): the loop seam jumps from +1 to 0.",
+   "ground_truth": {
+    "loop_click": true,
+    "periods": 200.25
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": 200,
+         "duration": 1.00125,
+         "envelope": {
+          "attack": 0,
+          "release": 0
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "edges.loop_seam.likely_click",
+     "expect": true
+    }
+   ]
+  },
+  {
+   "file": "stim_052.wav",
+   "key": "padded_tone",
+   "description": "600 Hz tone of 0.8 s with 0.5 s of silence before it and 0.25 s after it (1.55 s total).",
+   "ground_truth": {
+    "leading_silence_s": 0.5,
+    "trailing_silence_s": 0.25,
+    "duration_s": 1.55
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": 600,
+         "duration": 0.8
+        }
+       ]
+      },
+      "output": "{tmp}/pt.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/pt.wav",
+      "operations": [
+       {
+        "op": "pad",
+        "start": 0.5,
+        "end": 0.25
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "silence.leading_s",
+     "expect": 0.5,
+     "tol": 0.02
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "silence.trailing_s",
+     "expect": 0.25,
+     "tol": 0.03
+    }
+   ]
+  },
+  {
+   "file": "stim_053.wav",
+   "key": "clicks_3",
+   "description": "3 short clicks at irregular times (0.2, 0.9, 1.3 s).",
+   "ground_truth": {
+    "onsets": 3,
+    "onset_times_s": [
+     0.2,
+     0.9,
+     1.3
+    ]
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 6,
+       "duration": 2.0,
+       "layers": [
+        {
+         "wave": "noise",
+         "highpass": 1000,
+         "envelope": {
+          "attack": 0.0005,
+          "decay": 0.0,
+          "sustain": 1,
+          "release": 0.003
+         },
+         "sequence": [
+          [
+           "rest",
+           0.2
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.696
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.396
+          ],
+          [
+           "x",
+           0.004
+          ]
+         ]
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_events",
+     "field": "event_count",
+     "expect": 3
+    }
+   ]
+  },
+  {
+   "file": "stim_054.wav",
+   "key": "clicks_5",
+   "description": "5 short clicks at irregular times (0.1, 0.45, 1, 1.3, 2.05 s).",
+   "ground_truth": {
+    "onsets": 5,
+    "onset_times_s": [
+     0.1,
+     0.45,
+     1.0,
+     1.3,
+     2.05
+    ]
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 6,
+       "duration": 2.5,
+       "layers": [
+        {
+         "wave": "noise",
+         "highpass": 1000,
+         "envelope": {
+          "attack": 0.0005,
+          "decay": 0.0,
+          "sustain": 1,
+          "release": 0.003
+         },
+         "sequence": [
+          [
+           "rest",
+           0.1
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.346
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.546
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.296
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.746
+          ],
+          [
+           "x",
+           0.004
+          ]
+         ]
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_events",
+     "field": "event_count",
+     "expect": 5
+    }
+   ]
+  },
+  {
+   "file": "stim_055.wav",
+   "key": "clicks_7",
+   "description": "7 short clicks at irregular times (0.1, 0.4, 0.6, 1.1, 1.5, 1.8, 2.4 s).",
+   "ground_truth": {
+    "onsets": 7,
+    "onset_times_s": [
+     0.1,
+     0.4,
+     0.6,
+     1.1,
+     1.5,
+     1.8,
+     2.4
+    ]
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 6,
+       "duration": 3.0,
+       "layers": [
+        {
+         "wave": "noise",
+         "highpass": 1000,
+         "envelope": {
+          "attack": 0.0005,
+          "decay": 0.0,
+          "sustain": 1,
+          "release": 0.003
+         },
+         "sequence": [
+          [
+           "rest",
+           0.1
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.296
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.196
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.496
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.396
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.296
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.596
+          ],
+          [
+           "x",
+           0.004
+          ]
+         ]
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_events",
+     "field": "event_count",
+     "expect": 7
+    }
+   ]
+  },
+  {
+   "file": "stim_056.wav",
+   "key": "tempo_90",
+   "description": "8 short clicks at exactly 90 BPM (one every 0.6667 s, first at t=0).",
+   "ground_truth": {
+    "bpm": 90,
+    "onsets": 8,
+    "interval_s": 0.666667
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 6,
+       "duration": 5.333333,
+       "layers": [
+        {
+         "wave": "noise",
+         "highpass": 1000,
+         "envelope": {
+          "attack": 0.0005,
+          "decay": 0.0,
+          "sustain": 1,
+          "release": 0.003
+         },
+         "sequence": [
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.662667
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.662666
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.662667
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.662667
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.662666
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.662667
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.662667
+          ],
+          [
+           "x",
+           0.004
+          ]
+         ]
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "rhythm.onset_count",
+     "expect": 8
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "rhythm.tempo_bpm",
+     "expect": 90,
+     "tol": 2
+    }
+   ]
+  },
+  {
+   "file": "stim_057.wav",
+   "key": "tempo_100",
+   "description": "8 short clicks at exactly 100 BPM (one every 0.6 s, first at t=0).",
+   "ground_truth": {
+    "bpm": 100,
+    "onsets": 8,
+    "interval_s": 0.6
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 6,
+       "duration": 4.8,
+       "layers": [
+        {
+         "wave": "noise",
+         "highpass": 1000,
+         "envelope": {
+          "attack": 0.0005,
+          "decay": 0.0,
+          "sustain": 1,
+          "release": 0.003
+         },
+         "sequence": [
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.596
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.596
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.596
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.596
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.596
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.596
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.596
+          ],
+          [
+           "x",
+           0.004
+          ]
+         ]
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "rhythm.onset_count",
+     "expect": 8
+    },
+    {
+     "tool": "audio_analyze",
+     "field": "rhythm.tempo_bpm",
+     "expect": 100,
+     "tol": 2
+    }
+   ]
+  },
+  {
+   "file": "stim_058.wav",
+   "key": "tempo_150",
+   "description": "8 short clicks at exactly 150 BPM (one every 0.4 s, first at t=0).",
+   "ground_truth": {
+    "bpm": 150,
+    "onsets": 8,
+    "interval_s": 0.4
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 6,
+       "duration": 3.2,
+       "layers": [
+        {
+         "wave": "noise",
+         "highpass": 1000,
+         "envelope": {
+          "attack": 0.0005,
+          "decay": 0.0,
+          "sustain": 1,
+          "release": 0.003
+         },
+         "sequence": [
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.396
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.396
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.396
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.396
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.396
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.396
+          ],
+          [
+           "x",
+           0.004
+          ],
+          [
+           "rest",
+           0.396
+          ],
+          [
+           "x",
+           0.004
+          ]
+         ]
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "rhythm.onset_count",
+     "expect": 8
+    }
+   ]
+  },
+  {
+   "file": "stim_059.wav",
+   "key": "impulse_0.25s",
+   "description": "One full-scale sample at exactly 0.25 s in 1 s of silence.",
+   "ground_truth": {
+    "impulse_time_s": 0.25,
+    "impulse_sample_index": 12000
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "duration": 1.0,
+       "normalize_peak_db": null,
+       "layers": [
+        {
+         "wave": "silence",
+         "duration": 1.0
+        },
+        {
+         "wave": "impulse",
+         "start": 0.25,
+         "duration": 0.001
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_events",
+     "field": "event_count",
+     "expect": 1
+    }
+   ]
+  },
+  {
+   "file": "stim_060.wav",
+   "key": "impulse_1.2s",
+   "description": "One full-scale sample at exactly 1.2 s in 2 s of silence.",
+   "ground_truth": {
+    "impulse_time_s": 1.2,
+    "impulse_sample_index": 57600
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "duration": 2.0,
+       "normalize_peak_db": null,
+       "layers": [
+        {
+         "wave": "silence",
+         "duration": 2.0
+        },
+        {
+         "wave": "impulse",
+         "start": 1.2,
+         "duration": 0.001
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_events",
+     "field": "event_count",
+     "expect": 1
+    }
+   ]
+  },
+  {
+   "file": "stim_061.wav",
+   "key": "stereo_right_only",
+   "description": "440 Hz tone in the right channel only; left channel silent. 3 s.",
+   "ground_truth": {
+    "left": "silence",
+    "right": "440 Hz tone"
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": 440,
+         "duration": 3,
+         "pan": 1
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "stereo.width",
+     "expect": "one channel silent"
+    }
+   ]
+  },
+  {
+   "file": "stim_062.wav",
+   "key": "stereo_pink_out_of_phase",
+   "description": "Pink noise with the right channel polarity-inverted (correlation -1). 3 s.",
+   "ground_truth": {
+    "correlation": -1.0
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 51,
+       "stereo": true,
+       "layers": [
+        {
+         "wave": "pink",
+         "duration": 3
+        }
+       ]
+      },
+      "output": "{tmp}/sp.wav",
+      "overwrite": true
+     }
+    },
+    {
+     "tool": "audio_process",
+     "args": {
+      "path": "{tmp}/sp.wav",
+      "operations": [
+       {
+        "op": "polarity",
+        "channel": 1
+       }
+      ],
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "stereo.correlation",
+     "expect": -1.0,
+     "tol": 0.001
+    }
+   ]
+  },
+  {
+   "file": "stim_063.wav",
+   "key": "stereo_pink_identical",
+   "description": "The same pink noise in both channels (correlation +1, a mono signal in stereo). 3 s.",
+   "ground_truth": {
+    "correlation": 1.0,
+    "channels": "identical"
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "seed": 52,
+       "stereo": true,
+       "layers": [
+        {
+         "wave": "pink",
+         "duration": 3
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "stereo.correlation",
+     "expect": 1.0,
+     "tol": 0.001
+    }
+   ]
+  },
+  {
+   "file": "stim_064.wav",
+   "key": "chord_Cmajor_sines",
+   "description": "C major triad (C4 E4 G4) of equal-level sines, 2 s.",
+   "ground_truth": {
+    "notes": [
+     "C4",
+     "E4",
+     "G4"
+    ],
+    "polyphonic": true
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "layers": [
+        {
+         "wave": "sine",
+         "freq": "C4",
+         "duration": 2
+        },
+        {
+         "wave": "sine",
+         "freq": "E4",
+         "duration": 2
+        },
+        {
+         "wave": "sine",
+         "freq": "G4",
+         "duration": 2
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "spectrum.spectral_peaks",
+     "expect": [
+      "C4",
+      "E4",
+      "G4"
+     ],
+     "pluck": "note"
+    }
+   ]
+  },
+  {
+   "file": "stim_065.wav",
+   "key": "chord_Aminor_triangles",
+   "description": "A minor triad (A3 C4 E4) on triangle waves, 2 s.",
+   "ground_truth": {
+    "notes": [
+     "A3",
+     "C4",
+     "E4"
+    ],
+    "polyphonic": true
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "layers": [
+        {
+         "wave": "triangle",
+         "freq": "A3",
+         "duration": 2
+        },
+        {
+         "wave": "triangle",
+         "freq": "C4",
+         "duration": 2
+        },
+        {
+         "wave": "triangle",
+         "freq": "E4",
+         "duration": 2
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_analyze",
+     "field": "levels.clipped_samples",
+     "expect": 0
+    }
+   ]
+  },
+  {
+   "file": "stim_066.wav",
+   "key": "melody_twinkle",
+   "description": "'Twinkle, Twinkle, Little Star' opening (traditional, public domain), triangle wave, 0.4 s per note.",
+   "ground_truth": {
+    "notes": [
+     "C4",
+     "C4",
+     "G4",
+     "G4",
+     "A4",
+     "A4",
+     "G4"
+    ],
+    "note_duration_s": 0.4
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "layers": [
+        {
+         "wave": "triangle",
+         "sequence": [
+          [
+           "C4",
+           0.4
+          ],
+          [
+           "C4",
+           0.4
+          ],
+          [
+           "G4",
+           0.4
+          ],
+          [
+           "G4",
+           0.4
+          ],
+          [
+           "A4",
+           0.4
+          ],
+          [
+           "A4",
+           0.4
+          ],
+          [
+           "G4",
+           0.4
+          ]
+         ],
+         "envelope": {
+          "attack": 0.005,
+          "release": 0.03
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_events",
+     "field": "pitched_sequence",
+     "expect": "C4 C4 G4 G4 A4 A4 G4"
+    }
+   ]
+  },
+  {
+   "file": "stim_067.wav",
+   "key": "melody_frere_jacques",
+   "description": "'Frere Jacques' opening (traditional, public domain), sine wave, 0.35 s per note.",
+   "ground_truth": {
+    "notes": [
+     "C4",
+     "D4",
+     "E4",
+     "C4",
+     "C4",
+     "D4",
+     "E4",
+     "C4"
+    ],
+    "note_duration_s": 0.35
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "layers": [
+        {
+         "wave": "sine",
+         "sequence": [
+          [
+           "C4",
+           0.35
+          ],
+          [
+           "D4",
+           0.35
+          ],
+          [
+           "E4",
+           0.35
+          ],
+          [
+           "C4",
+           0.35
+          ],
+          [
+           "C4",
+           0.35
+          ],
+          [
+           "D4",
+           0.35
+          ],
+          [
+           "E4",
+           0.35
+          ],
+          [
+           "C4",
+           0.35
+          ]
+         ],
+         "envelope": {
+          "attack": 0.005,
+          "release": 0.03
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_events",
+     "field": "pitched_sequence",
+     "expect": "C4 D4 E4 C4 C4 D4 E4 C4"
+    }
+   ]
+  },
+  {
+   "file": "stim_068.wav",
+   "key": "melody_wholetone_down",
+   "description": "Descending whole-tone scale A4 to B3 (an exercise, not a tune), square wave, 0.3 s per note.",
+   "ground_truth": {
+    "notes": [
+     "A4",
+     "G4",
+     "F4",
+     "D#4",
+     "C#4",
+     "B3"
+    ],
+    "note_duration_s": 0.3
+   },
+   "steps": [
+    {
+     "tool": "audio_synthesize",
+     "args": {
+      "spec": {
+       "sample_rate": 48000,
+       "layers": [
+        {
+         "wave": "square",
+         "sequence": [
+          [
+           "A4",
+           0.3
+          ],
+          [
+           "G4",
+           0.3
+          ],
+          [
+           "F4",
+           0.3
+          ],
+          [
+           "D#4",
+           0.3
+          ],
+          [
+           "C#4",
+           0.3
+          ],
+          [
+           "B3",
+           0.3
+          ]
+         ],
+         "envelope": {
+          "attack": 0.005,
+          "release": 0.03
+         }
+        }
+       ]
+      },
+      "output": "{out}",
+      "overwrite": true
+     }
+    }
+   ],
+   "checks": [
+    {
+     "tool": "audio_events",
+     "field": "pitched_sequence",
+     "expect": "A4 G4 F4 D#4 C#4 B3"
+    }
+   ]
+  }
+ ]
+}

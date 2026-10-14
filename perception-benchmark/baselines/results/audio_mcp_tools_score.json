@@ -1,0 +1,2302 @@
+{
+ "overall": {
+  "n": 193,
+  "score": 0.9818652849740933,
+  "chance": 0.2462728649983752,
+  "missing": 1
+ },
+ "macro_category_score": 0.9705978705978706,
+ "by_category": {
+  "pitch": {
+   "n": 53,
+   "score": 1.0,
+   "chance": 0.1506060338473775,
+   "missing": 0
+  },
+  "loudness": {
+   "n": 37,
+   "score": 0.972972972972973,
+   "chance": 0.20696150696150695,
+   "missing": 0
+  },
+  "defects": {
+   "n": 31,
+   "score": 1.0,
+   "chance": 0.4623655913978495,
+   "missing": 0
+  },
+  "time": {
+   "n": 30,
+   "score": 0.9666666666666667,
+   "chance": 0.05852774193548387,
+   "missing": 1
+  },
+  "stereo": {
+   "n": 15,
+   "score": 1.0,
+   "chance": 0.3888888888888889,
+   "missing": 0
+  },
+  "spectrum": {
+   "n": 22,
+   "score": 0.9545454545454546,
+   "chance": 0.446969696969697,
+   "missing": 0
+  },
+  "melody": {
+   "n": 5,
+   "score": 0.9,
+   "chance": 0.02702702702702703,
+   "missing": 0
+  }
+ },
+ "by_task": {
+  "pitch.note_name": {
+   "n": 26,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": 0
+  },
+  "pitch.frequency": {
+   "n": 12,
+   "score": 1.0,
+   "chance": 0.004657523809523793,
+   "missing": 0
+  },
+  "pitch.higher": {
+   "n": 15,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": 0
+  },
+  "loudness.lufs": {
+   "n": 10,
+   "score": 1.0,
+   "chance": 0.03333333333333333,
+   "missing": 0
+  },
+  "loudness.louder": {
+   "n": 10,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": 0
+  },
+  "loudness.rms": {
+   "n": 7,
+   "score": 1.0,
+   "chance": 0.03333333333333333,
+   "missing": 0
+  },
+  "loudness.sample_peak": {
+   "n": 5,
+   "score": 1.0,
+   "chance": 0.015151515151515152,
+   "missing": 0
+  },
+  "loudness.true_peak": {
+   "n": 1,
+   "score": 1.0,
+   "chance": 0.015151515151515152,
+   "missing": 0
+  },
+  "loudness.true_peak_over": {
+   "n": 4,
+   "score": 0.75,
+   "chance": 0.5,
+   "missing": 0
+  },
+  "defects.clipping": {
+   "n": 8,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": 0
+  },
+  "defects.dc_offset": {
+   "n": 6,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": 0
+  },
+  "defects.mains_hum": {
+   "n": 7,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": 0
+  },
+  "defects.abrupt_start": {
+   "n": 5,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": 0
+  },
+  "defects.loop_click": {
+   "n": 5,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": 0
+  },
+  "time.duration": {
+   "n": 10,
+   "score": 1.0,
+   "chance": 0.007680000000000004,
+   "missing": 0
+  },
+  "time.leading_silence": {
+   "n": 2,
+   "score": 1.0,
+   "chance": 0.04892473118279572,
+   "missing": 0
+  },
+  "time.trailing_silence": {
+   "n": 2,
+   "score": 1.0,
+   "chance": 0.04892473118279571,
+   "missing": 0
+  },
+  "time.all_silent": {
+   "n": 2,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": 0
+  },
+  "time.onset_count": {
+   "n": 7,
+   "score": 1.0,
+   "chance": 0.047619047619047616,
+   "missing": 0
+  },
+  "time.tempo": {
+   "n": 4,
+   "score": 0.75,
+   "chance": 0.025,
+   "missing": 1
+  },
+  "time.impulse_time": {
+   "n": 3,
+   "score": 1.0,
+   "chance": 0.01666666666666668,
+   "missing": 0
+  },
+  "stereo.correlation": {
+   "n": 5,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": 0
+  },
+  "stereo.channels": {
+   "n": 5,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": 0
+  },
+  "stereo.out_of_phase": {
+   "n": 5,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": 0
+  },
+  "spectrum.tone_or_noise": {
+   "n": 8,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": 0
+  },
+  "spectrum.noise_colour": {
+   "n": 7,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": 0
+  },
+  "spectrum.chord_or_single": {
+   "n": 7,
+   "score": 0.8571428571428571,
+   "chance": 0.5,
+   "missing": 0
+  },
+  "melody.transcription": {
+   "n": 5,
+   "score": 0.9,
+   "chance": 0.02702702702702703,
+   "missing": 0
+  }
+ },
+ "by_difficulty": {
+  "hard": {
+   "n": 46,
+   "score": 0.9891304347826086,
+   "chance": 0.2584651801131443,
+   "missing": 0
+  },
+  "easy": {
+   "n": 48,
+   "score": 1.0,
+   "chance": 0.30992440708523844,
+   "missing": 0
+  },
+  "medium": {
+   "n": 99,
+   "score": 0.9696969696969697,
+   "chance": 0.2097463951453569,
+   "missing": 1
+  }
+ },
+ "traps": {
+  "n": 17,
+  "score": 1.0,
+  "chance": 0.48039215686274506,
+  "missing": 0
+ },
+ "numeric_abs_error": {
+  "frequency": {
+   "n": 12,
+   "median": 0.0,
+   "p90": 0.5600000000001728
+  },
+  "lufs": {
+   "n": 10,
+   "median": 0.0,
+   "p90": 0.0
+  },
+  "rms": {
+   "n": 7,
+   "median": 0.0,
+   "p90": 0.009999999999999787
+  },
+  "sample_peak": {
+   "n": 5,
+   "median": 0.0,
+   "p90": 0.0
+  },
+  "true_peak": {
+   "n": 1,
+   "median": 0.020000000000000018,
+   "p90": 0.020000000000000018
+  },
+  "duration": {
+   "n": 10,
+   "median": 0.0,
+   "p90": 0.0
+  },
+  "leading_silence": {
+   "n": 2,
+   "median": 0.0,
+   "p90": 0.0
+  },
+  "trailing_silence": {
+   "n": 2,
+   "median": 0.0,
+   "p90": 0.0
+  },
+  "onset_count": {
+   "n": 7,
+   "median": 0.0,
+   "p90": 0.0
+  },
+  "tempo": {
+   "n": 3,
+   "median": 0.20000000000000284,
+   "p90": 0.20000000000000284
+  },
+  "impulse_time": {
+   "n": 3,
+   "median": 0.010000000000000009,
+   "p90": 0.010000000000000009
+  }
+ },
+ "unknown_ids": [],
+ "items": [
+  {
+   "id": "pitch.note_name.01",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.02",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.03",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.04",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.05",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.06",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.07",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.08",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.09",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.10",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.11",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.12",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.13",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.14",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.15",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.16",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.17",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.18",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.19",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.20",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.21",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.22",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.23",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.24",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.25",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.note_name.26",
+   "category": "pitch",
+   "task": "note_name",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.01639344262295082,
+   "missing": false
+  },
+  {
+   "id": "pitch.frequency.01",
+   "category": "pitch",
+   "task": "frequency",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.0012244897959183673,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "pitch.frequency.02",
+   "category": "pitch",
+   "task": "frequency",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.0024489795918367346,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "pitch.frequency.03",
+   "category": "pitch",
+   "task": "frequency",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.006342857142857128,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "pitch.frequency.04",
+   "category": "pitch",
+   "task": "frequency",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.010073469387755035,
+   "missing": false,
+   "abs_error": 0.7000000000000455
+  },
+  {
+   "id": "pitch.frequency.05",
+   "category": "pitch",
+   "task": "frequency",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.0035428571428571223,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "pitch.frequency.06",
+   "category": "pitch",
+   "task": "frequency",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.0036408163265305954,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "pitch.frequency.07",
+   "category": "pitch",
+   "task": "frequency",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.008138775510204104,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "pitch.frequency.08",
+   "category": "pitch",
+   "task": "frequency",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.003591836734693859,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "pitch.frequency.09",
+   "category": "pitch",
+   "task": "frequency",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.0010678367346938743,
+   "missing": false,
+   "abs_error": 0.09000000000000341
+  },
+  {
+   "id": "pitch.frequency.10",
+   "category": "pitch",
+   "task": "frequency",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.005381714285714243,
+   "missing": false,
+   "abs_error": 0.03999999999996362
+  },
+  {
+   "id": "pitch.frequency.11",
+   "category": "pitch",
+   "task": "frequency",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.00958906122448975,
+   "missing": false,
+   "abs_error": 0.5600000000001728
+  },
+  {
+   "id": "pitch.frequency.12",
+   "category": "pitch",
+   "task": "frequency",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.0008475918367346993,
+   "missing": false,
+   "abs_error": 0.030000000000001137
+  },
+  {
+   "id": "pitch.higher.01",
+   "category": "pitch",
+   "task": "higher",
+   "difficulty": "hard",
+   "trap": true,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "pitch.higher.02",
+   "category": "pitch",
+   "task": "higher",
+   "difficulty": "hard",
+   "trap": true,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "pitch.higher.03",
+   "category": "pitch",
+   "task": "higher",
+   "difficulty": "hard",
+   "trap": true,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "pitch.higher.04",
+   "category": "pitch",
+   "task": "higher",
+   "difficulty": "hard",
+   "trap": true,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "pitch.higher.05",
+   "category": "pitch",
+   "task": "higher",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "pitch.higher.06",
+   "category": "pitch",
+   "task": "higher",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "pitch.higher.07",
+   "category": "pitch",
+   "task": "higher",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "pitch.higher.08",
+   "category": "pitch",
+   "task": "higher",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "pitch.higher.09",
+   "category": "pitch",
+   "task": "higher",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "pitch.higher.10",
+   "category": "pitch",
+   "task": "higher",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "pitch.higher.11",
+   "category": "pitch",
+   "task": "higher",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "pitch.higher.12",
+   "category": "pitch",
+   "task": "higher",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "pitch.higher.13",
+   "category": "pitch",
+   "task": "higher",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "pitch.higher.14",
+   "category": "pitch",
+   "task": "higher",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "pitch.higher.15",
+   "category": "pitch",
+   "task": "higher",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "loudness.lufs.01",
+   "category": "loudness",
+   "task": "lufs",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.03333333333333333,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "loudness.lufs.02",
+   "category": "loudness",
+   "task": "lufs",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.03333333333333333,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "loudness.lufs.03",
+   "category": "loudness",
+   "task": "lufs",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.03333333333333333,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "loudness.lufs.04",
+   "category": "loudness",
+   "task": "lufs",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.03333333333333333,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "loudness.lufs.05",
+   "category": "loudness",
+   "task": "lufs",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.03333333333333333,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "loudness.lufs.06",
+   "category": "loudness",
+   "task": "lufs",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.03333333333333333,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "loudness.lufs.07",
+   "category": "loudness",
+   "task": "lufs",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.03333333333333333,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "loudness.lufs.08",
+   "category": "loudness",
+   "task": "lufs",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.03333333333333333,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "loudness.lufs.09",
+   "category": "loudness",
+   "task": "lufs",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.03333333333333333,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "loudness.lufs.10",
+   "category": "loudness",
+   "task": "lufs",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.03333333333333333,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "loudness.louder.01",
+   "category": "loudness",
+   "task": "louder",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "loudness.louder.02",
+   "category": "loudness",
+   "task": "louder",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "loudness.louder.03",
+   "category": "loudness",
+   "task": "louder",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "loudness.louder.04",
+   "category": "loudness",
+   "task": "louder",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "loudness.louder.05",
+   "category": "loudness",
+   "task": "louder",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "loudness.louder.06",
+   "category": "loudness",
+   "task": "louder",
+   "difficulty": "hard",
+   "trap": true,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "loudness.louder.07",
+   "category": "loudness",
+   "task": "louder",
+   "difficulty": "hard",
+   "trap": true,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "loudness.louder.08",
+   "category": "loudness",
+   "task": "louder",
+   "difficulty": "hard",
+   "trap": true,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "loudness.louder.09",
+   "category": "loudness",
+   "task": "louder",
+   "difficulty": "hard",
+   "trap": true,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "loudness.louder.10",
+   "category": "loudness",
+   "task": "louder",
+   "difficulty": "hard",
+   "trap": true,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "loudness.rms.01",
+   "category": "loudness",
+   "task": "rms",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.03333333333333333,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "loudness.rms.02",
+   "category": "loudness",
+   "task": "rms",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.03333333333333333,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "loudness.rms.03",
+   "category": "loudness",
+   "task": "rms",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.03333333333333333,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "loudness.rms.04",
+   "category": "loudness",
+   "task": "rms",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.033333333333333305,
+   "missing": false,
+   "abs_error": 0.009999999999999787
+  },
+  {
+   "id": "loudness.rms.05",
+   "category": "loudness",
+   "task": "rms",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.03333333333333333,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "loudness.rms.06",
+   "category": "loudness",
+   "task": "rms",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.03333333333333333,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "loudness.rms.07",
+   "category": "loudness",
+   "task": "rms",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.03333333333333333,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "loudness.sample_peak.01",
+   "category": "loudness",
+   "task": "sample_peak",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.015151515151515152,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "loudness.sample_peak.02",
+   "category": "loudness",
+   "task": "sample_peak",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.015151515151515152,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "loudness.sample_peak.03",
+   "category": "loudness",
+   "task": "sample_peak",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.015151515151515152,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "loudness.sample_peak.04",
+   "category": "loudness",
+   "task": "sample_peak",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.015151515151515152,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "loudness.sample_peak.05",
+   "category": "loudness",
+   "task": "sample_peak",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.015151515151515152,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "loudness.true_peak.01",
+   "category": "loudness",
+   "task": "true_peak",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.015151515151515152,
+   "missing": false,
+   "abs_error": 0.020000000000000018
+  },
+  {
+   "id": "loudness.true_peak_over.01",
+   "category": "loudness",
+   "task": "true_peak_over",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "loudness.true_peak_over.02",
+   "category": "loudness",
+   "task": "true_peak_over",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 0.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "loudness.true_peak_over.03",
+   "category": "loudness",
+   "task": "true_peak_over",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "loudness.true_peak_over.04",
+   "category": "loudness",
+   "task": "true_peak_over",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.clipping.01",
+   "category": "defects",
+   "task": "clipping",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.clipping.02",
+   "category": "defects",
+   "task": "clipping",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.clipping.03",
+   "category": "defects",
+   "task": "clipping",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.clipping.04",
+   "category": "defects",
+   "task": "clipping",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.clipping.05",
+   "category": "defects",
+   "task": "clipping",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.clipping.06",
+   "category": "defects",
+   "task": "clipping",
+   "difficulty": "medium",
+   "trap": true,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.clipping.07",
+   "category": "defects",
+   "task": "clipping",
+   "difficulty": "hard",
+   "trap": true,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.clipping.08",
+   "category": "defects",
+   "task": "clipping",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.dc_offset.01",
+   "category": "defects",
+   "task": "dc_offset",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.dc_offset.02",
+   "category": "defects",
+   "task": "dc_offset",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.dc_offset.03",
+   "category": "defects",
+   "task": "dc_offset",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.dc_offset.04",
+   "category": "defects",
+   "task": "dc_offset",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.dc_offset.05",
+   "category": "defects",
+   "task": "dc_offset",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.dc_offset.06",
+   "category": "defects",
+   "task": "dc_offset",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.mains_hum.01",
+   "category": "defects",
+   "task": "mains_hum",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "defects.mains_hum.02",
+   "category": "defects",
+   "task": "mains_hum",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "defects.mains_hum.03",
+   "category": "defects",
+   "task": "mains_hum",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "defects.mains_hum.04",
+   "category": "defects",
+   "task": "mains_hum",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "defects.mains_hum.05",
+   "category": "defects",
+   "task": "mains_hum",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "defects.mains_hum.06",
+   "category": "defects",
+   "task": "mains_hum",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "defects.mains_hum.07",
+   "category": "defects",
+   "task": "mains_hum",
+   "difficulty": "hard",
+   "trap": true,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "defects.abrupt_start.01",
+   "category": "defects",
+   "task": "abrupt_start",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.abrupt_start.02",
+   "category": "defects",
+   "task": "abrupt_start",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.abrupt_start.03",
+   "category": "defects",
+   "task": "abrupt_start",
+   "difficulty": "hard",
+   "trap": true,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.abrupt_start.04",
+   "category": "defects",
+   "task": "abrupt_start",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.abrupt_start.05",
+   "category": "defects",
+   "task": "abrupt_start",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.loop_click.01",
+   "category": "defects",
+   "task": "loop_click",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.loop_click.02",
+   "category": "defects",
+   "task": "loop_click",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.loop_click.03",
+   "category": "defects",
+   "task": "loop_click",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.loop_click.04",
+   "category": "defects",
+   "task": "loop_click",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "defects.loop_click.05",
+   "category": "defects",
+   "task": "loop_click",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "time.duration.01",
+   "category": "time",
+   "task": "duration",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.013333333333333286,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "time.duration.02",
+   "category": "time",
+   "task": "duration",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.003333333333333336,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "time.duration.03",
+   "category": "time",
+   "task": "duration",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.0033333333333333288,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "time.duration.04",
+   "category": "time",
+   "task": "duration",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.0040000000000000036,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "time.duration.05",
+   "category": "time",
+   "task": "duration",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.006933333333333339,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "time.duration.06",
+   "category": "time",
+   "task": "duration",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.00853333333333334,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "time.duration.07",
+   "category": "time",
+   "task": "duration",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.010666666666666677,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "time.duration.08",
+   "category": "time",
+   "task": "duration",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.02000000000000005,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "time.duration.09",
+   "category": "time",
+   "task": "duration",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.003333333333333336,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "time.duration.10",
+   "category": "time",
+   "task": "duration",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.003333333333333336,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "time.leading_silence.01",
+   "category": "time",
+   "task": "leading_silence",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.03333333333333336,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "time.trailing_silence.01",
+   "category": "time",
+   "task": "trailing_silence",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.03333333333333336,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "time.leading_silence.02",
+   "category": "time",
+   "task": "leading_silence",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.06451612903225809,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "time.trailing_silence.02",
+   "category": "time",
+   "task": "trailing_silence",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.06451612903225805,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "time.all_silent.01",
+   "category": "time",
+   "task": "all_silent",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "time.all_silent.02",
+   "category": "time",
+   "task": "all_silent",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "time.onset_count.01",
+   "category": "time",
+   "task": "onset_count",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.047619047619047616,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "time.onset_count.02",
+   "category": "time",
+   "task": "onset_count",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.047619047619047616,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "time.onset_count.03",
+   "category": "time",
+   "task": "onset_count",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.047619047619047616,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "time.onset_count.04",
+   "category": "time",
+   "task": "onset_count",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.047619047619047616,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "time.onset_count.05",
+   "category": "time",
+   "task": "onset_count",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.047619047619047616,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "time.onset_count.06",
+   "category": "time",
+   "task": "onset_count",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.047619047619047616,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "time.onset_count.07",
+   "category": "time",
+   "task": "onset_count",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.047619047619047616,
+   "missing": false,
+   "abs_error": 0.0
+  },
+  {
+   "id": "time.tempo.01",
+   "category": "time",
+   "task": "tempo",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.025,
+   "missing": false,
+   "abs_error": 0.09999999999999432
+  },
+  {
+   "id": "time.tempo.02",
+   "category": "time",
+   "task": "tempo",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.025,
+   "missing": false,
+   "abs_error": 0.20000000000000284
+  },
+  {
+   "id": "time.tempo.03",
+   "category": "time",
+   "task": "tempo",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.025,
+   "missing": false,
+   "abs_error": 0.20000000000000284
+  },
+  {
+   "id": "time.tempo.04",
+   "category": "time",
+   "task": "tempo",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 0.0,
+   "chance": 0.025,
+   "missing": true
+  },
+  {
+   "id": "time.impulse_time.01",
+   "category": "time",
+   "task": "impulse_time",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.020000000000000018,
+   "missing": false,
+   "abs_error": 0.010000000000000009
+  },
+  {
+   "id": "time.impulse_time.02",
+   "category": "time",
+   "task": "impulse_time",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.020000000000000018,
+   "missing": false,
+   "abs_error": 0.010000000000000009
+  },
+  {
+   "id": "time.impulse_time.03",
+   "category": "time",
+   "task": "impulse_time",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.010000000000000009,
+   "missing": false,
+   "abs_error": 0.010000000000000009
+  },
+  {
+   "id": "stereo.correlation.01",
+   "category": "stereo",
+   "task": "correlation",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "stereo.correlation.02",
+   "category": "stereo",
+   "task": "correlation",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "stereo.correlation.03",
+   "category": "stereo",
+   "task": "correlation",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "stereo.correlation.04",
+   "category": "stereo",
+   "task": "correlation",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "stereo.correlation.05",
+   "category": "stereo",
+   "task": "correlation",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "stereo.channels.01",
+   "category": "stereo",
+   "task": "channels",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "stereo.channels.02",
+   "category": "stereo",
+   "task": "channels",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "stereo.channels.03",
+   "category": "stereo",
+   "task": "channels",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "stereo.channels.04",
+   "category": "stereo",
+   "task": "channels",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "stereo.channels.05",
+   "category": "stereo",
+   "task": "channels",
+   "difficulty": "medium",
+   "trap": true,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "stereo.out_of_phase.01",
+   "category": "stereo",
+   "task": "out_of_phase",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "stereo.out_of_phase.02",
+   "category": "stereo",
+   "task": "out_of_phase",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "stereo.out_of_phase.03",
+   "category": "stereo",
+   "task": "out_of_phase",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "stereo.out_of_phase.04",
+   "category": "stereo",
+   "task": "out_of_phase",
+   "difficulty": "hard",
+   "trap": true,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "stereo.out_of_phase.05",
+   "category": "stereo",
+   "task": "out_of_phase",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "spectrum.tone_or_noise.01",
+   "category": "spectrum",
+   "task": "tone_or_noise",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "spectrum.tone_or_noise.02",
+   "category": "spectrum",
+   "task": "tone_or_noise",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "spectrum.tone_or_noise.03",
+   "category": "spectrum",
+   "task": "tone_or_noise",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "spectrum.tone_or_noise.04",
+   "category": "spectrum",
+   "task": "tone_or_noise",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "spectrum.tone_or_noise.05",
+   "category": "spectrum",
+   "task": "tone_or_noise",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "spectrum.tone_or_noise.06",
+   "category": "spectrum",
+   "task": "tone_or_noise",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "spectrum.tone_or_noise.07",
+   "category": "spectrum",
+   "task": "tone_or_noise",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "spectrum.tone_or_noise.08",
+   "category": "spectrum",
+   "task": "tone_or_noise",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "spectrum.noise_colour.01",
+   "category": "spectrum",
+   "task": "noise_colour",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "spectrum.noise_colour.02",
+   "category": "spectrum",
+   "task": "noise_colour",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "spectrum.noise_colour.03",
+   "category": "spectrum",
+   "task": "noise_colour",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "spectrum.noise_colour.04",
+   "category": "spectrum",
+   "task": "noise_colour",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "spectrum.noise_colour.05",
+   "category": "spectrum",
+   "task": "noise_colour",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "spectrum.noise_colour.06",
+   "category": "spectrum",
+   "task": "noise_colour",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "spectrum.noise_colour.07",
+   "category": "spectrum",
+   "task": "noise_colour",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.3333333333333333,
+   "missing": false
+  },
+  {
+   "id": "spectrum.chord_or_single.01",
+   "category": "spectrum",
+   "task": "chord_or_single",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "spectrum.chord_or_single.02",
+   "category": "spectrum",
+   "task": "chord_or_single",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 0.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "spectrum.chord_or_single.03",
+   "category": "spectrum",
+   "task": "chord_or_single",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "spectrum.chord_or_single.04",
+   "category": "spectrum",
+   "task": "chord_or_single",
+   "difficulty": "easy",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "spectrum.chord_or_single.05",
+   "category": "spectrum",
+   "task": "chord_or_single",
+   "difficulty": "hard",
+   "trap": true,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "spectrum.chord_or_single.06",
+   "category": "spectrum",
+   "task": "chord_or_single",
+   "difficulty": "hard",
+   "trap": true,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "spectrum.chord_or_single.07",
+   "category": "spectrum",
+   "task": "chord_or_single",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.5,
+   "missing": false
+  },
+  {
+   "id": "melody.transcription.01",
+   "category": "melody",
+   "task": "transcription",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.02702702702702703,
+   "missing": false
+  },
+  {
+   "id": "melody.transcription.02",
+   "category": "melody",
+   "task": "transcription",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.02702702702702703,
+   "missing": false
+  },
+  {
+   "id": "melody.transcription.03",
+   "category": "melody",
+   "task": "transcription",
+   "difficulty": "medium",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.02702702702702703,
+   "missing": false
+  },
+  {
+   "id": "melody.transcription.04",
+   "category": "melody",
+   "task": "transcription",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 0.5,
+   "chance": 0.02702702702702703,
+   "missing": false
+  },
+  {
+   "id": "melody.transcription.05",
+   "category": "melody",
+   "task": "transcription",
+   "difficulty": "hard",
+   "trap": false,
+   "score": 1.0,
+   "chance": 0.02702702702702703,
+   "missing": false
+  }
+ ],
+ "name": "audio-mcp 0.2.0 tool ceiling (rule-based, not an LLM)"
+}

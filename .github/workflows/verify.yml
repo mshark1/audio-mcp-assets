@@ -21,14 +21,29 @@ jobs:
       - name: Independent ground-truth check (no audio-mcp code)
         run: python tools/verify_independent.py reference-signals
       - name: Resemblance check against famous jingles and sound marks
-        run: python tools/similarity_check.py sfx-retro-ui
+        run: |
+          python tools/similarity_check.py sfx-retro-ui
+          python tools/similarity_check.py perception-benchmark/stimuli
       - name: Every manifest check passed when the pack was built
         run: |
           python - <<'PY'
           import json, sys
-          bad = [f"{pack}/{a['file']}: {r['measure']}" for pack in ("reference-signals", "sfx-retro-ui")
+          bad = [f"{pack}/{a['file']}: {r['measure']}" for pack in ("reference-signals", "sfx-retro-ui", "perception-benchmark/stimuli")
                  for a in json.load(open(f"{pack}/manifest.json", encoding="utf-8"))["assets"]
                  for r in a["verification"] if not r["pass"]]
           print("\n".join(bad) or "all manifest checks passed")
           sys.exit(1 if bad else 0)
+          PY
+      - name: "Perception benchmark: validate items (schema, files, provenance, independent re-measurement)"
+        run: python perception-benchmark/validate.py
+      - name: "Perception benchmark: score the random baseline (smoke test, must land near chance)"
+        run: |
+          python perception-benchmark/baselines/random.py --out "$RUNNER_TEMP/random.jsonl"
+          python perception-benchmark/score.py "$RUNNER_TEMP/random.jsonl" --json "$RUNNER_TEMP/random_score.json"
+          python - <<'PY'
+          import json, os, sys
+          r = json.load(open(os.path.join(os.environ["RUNNER_TEMP"], "random_score.json")))
+          o = r["overall"]
+          print(f"random {o['score']:.3f} vs chance {o['chance']:.3f} on {o['n']} items")
+          sys.exit(0 if o["n"] >= 100 and o["missing"] == 0 and abs(o["score"] - o["chance"]) < 0.1 else 1)
           PY

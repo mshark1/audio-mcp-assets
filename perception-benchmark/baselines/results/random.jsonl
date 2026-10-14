@@ -1,0 +1,193 @@
+{"id": "pitch.note_name.01", "answer": "F#6"}
+{"id": "pitch.note_name.02", "answer": "C4"}
+{"id": "pitch.note_name.03", "answer": "C6"}
+{"id": "pitch.note_name.04", "answer": "G#6"}
+{"id": "pitch.note_name.05", "answer": "D4"}
+{"id": "pitch.note_name.06", "answer": "D2"}
+{"id": "pitch.note_name.07", "answer": "E3"}
+{"id": "pitch.note_name.08", "answer": "G#4"}
+{"id": "pitch.note_name.09", "answer": "G4"}
+{"id": "pitch.note_name.10", "answer": "C#4"}
+{"id": "pitch.note_name.11", "answer": "A#6"}
+{"id": "pitch.note_name.12", "answer": "D6"}
+{"id": "pitch.note_name.13", "answer": "F6"}
+{"id": "pitch.note_name.14", "answer": "G3"}
+{"id": "pitch.note_name.15", "answer": "F#4"}
+{"id": "pitch.note_name.16", "answer": "A#3"}
+{"id": "pitch.note_name.17", "answer": "C#5"}
+{"id": "pitch.note_name.18", "answer": "A6"}
+{"id": "pitch.note_name.19", "answer": "A#6"}
+{"id": "pitch.note_name.20", "answer": "C#3"}
+{"id": "pitch.note_name.21", "answer": "G#4"}
+{"id": "pitch.note_name.22", "answer": "G#2"}
+{"id": "pitch.note_name.23", "answer": "F#3"}
+{"id": "pitch.note_name.24", "answer": "G#2"}
+{"id": "pitch.note_name.25", "answer": "C6"}
+{"id": "pitch.note_name.26", "answer": "F#2"}
+{"id": "pitch.frequency.01", "answer": "1565 Hz"}
+{"id": "pitch.frequency.02", "answer": "663.7 Hz"}
+{"id": "pitch.frequency.03", "answer": "2279 Hz"}
+{"id": "pitch.frequency.04", "answer": "2458 Hz"}
+{"id": "pitch.frequency.05", "answer": "2035 Hz"}
+{"id": "pitch.frequency.06", "answer": "2260 Hz"}
+{"id": "pitch.frequency.07", "answer": "809.9 Hz"}
+{"id": "pitch.frequency.08", "answer": "1838 Hz"}
+{"id": "pitch.frequency.09", "answer": "2252 Hz"}
+{"id": "pitch.frequency.10", "answer": "1726 Hz"}
+{"id": "pitch.frequency.11", "answer": "1207 Hz"}
+{"id": "pitch.frequency.12", "answer": "296.7 Hz"}
+{"id": "pitch.higher.01", "answer": "B"}
+{"id": "pitch.higher.02", "answer": "B"}
+{"id": "pitch.higher.03", "answer": "A"}
+{"id": "pitch.higher.04", "answer": "B"}
+{"id": "pitch.higher.05", "answer": "B"}
+{"id": "pitch.higher.06", "answer": "B"}
+{"id": "pitch.higher.07", "answer": "A"}
+{"id": "pitch.higher.08", "answer": "A"}
+{"id": "pitch.higher.09", "answer": "A"}
+{"id": "pitch.higher.10", "answer": "B"}
+{"id": "pitch.higher.11", "answer": "A"}
+{"id": "pitch.higher.12", "answer": "B"}
+{"id": "pitch.higher.13", "answer": "B"}
+{"id": "pitch.higher.14", "answer": "A"}
+{"id": "pitch.higher.15", "answer": "B"}
+{"id": "loudness.lufs.01", "answer": "-17.78 LUFS"}
+{"id": "loudness.lufs.02", "answer": "-56.22 LUFS"}
+{"id": "loudness.lufs.03", "answer": "-4.979 LUFS"}
+{"id": "loudness.lufs.04", "answer": "-46.7 LUFS"}
+{"id": "loudness.lufs.05", "answer": "-11.8 LUFS"}
+{"id": "loudness.lufs.06", "answer": "-51.45 LUFS"}
+{"id": "loudness.lufs.07", "answer": "-27.42 LUFS"}
+{"id": "loudness.lufs.08", "answer": "-54.53 LUFS"}
+{"id": "loudness.lufs.09", "answer": "-0.4067 LUFS"}
+{"id": "loudness.lufs.10", "answer": "-7.495 LUFS"}
+{"id": "loudness.louder.01", "answer": "B"}
+{"id": "loudness.louder.02", "answer": "A"}
+{"id": "loudness.louder.03", "answer": "B"}
+{"id": "loudness.louder.04", "answer": "B"}
+{"id": "loudness.louder.05", "answer": "A"}
+{"id": "loudness.louder.06", "answer": "B"}
+{"id": "loudness.louder.07", "answer": "A"}
+{"id": "loudness.louder.08", "answer": "B"}
+{"id": "loudness.louder.09", "answer": "B"}
+{"id": "loudness.louder.10", "answer": "A"}
+{"id": "loudness.rms.01", "answer": "-24.22 dBFS"}
+{"id": "loudness.rms.02", "answer": "-36.91 dBFS"}
+{"id": "loudness.rms.03", "answer": "-25.46 dBFS"}
+{"id": "loudness.rms.04", "answer": "-42.58 dBFS"}
+{"id": "loudness.rms.05", "answer": "-48.64 dBFS"}
+{"id": "loudness.rms.06", "answer": "-48.8 dBFS"}
+{"id": "loudness.rms.07", "answer": "-23.23 dBFS"}
+{"id": "loudness.sample_peak.01", "answer": "-16.66 dBFS"}
+{"id": "loudness.sample_peak.02", "answer": "-28.55 dBFS"}
+{"id": "loudness.sample_peak.03", "answer": "-54.07 dBFS"}
+{"id": "loudness.sample_peak.04", "answer": "-9.998 dBFS"}
+{"id": "loudness.sample_peak.05", "answer": "-2.133 dBFS"}
+{"id": "loudness.true_peak.01", "answer": "0.9431 dBTP"}
+{"id": "loudness.true_peak_over.01", "answer": "yes"}
+{"id": "loudness.true_peak_over.02", "answer": "no"}
+{"id": "loudness.true_peak_over.03", "answer": "no"}
+{"id": "loudness.true_peak_over.04", "answer": "yes"}
+{"id": "defects.clipping.01", "answer": "yes"}
+{"id": "defects.clipping.02", "answer": "no"}
+{"id": "defects.clipping.03", "answer": "no"}
+{"id": "defects.clipping.04", "answer": "no"}
+{"id": "defects.clipping.05", "answer": "no"}
+{"id": "defects.clipping.06", "answer": "no"}
+{"id": "defects.clipping.07", "answer": "yes"}
+{"id": "defects.clipping.08", "answer": "no"}
+{"id": "defects.dc_offset.01", "answer": "yes"}
+{"id": "defects.dc_offset.02", "answer": "no"}
+{"id": "defects.dc_offset.03", "answer": "no"}
+{"id": "defects.dc_offset.04", "answer": "yes"}
+{"id": "defects.dc_offset.05", "answer": "yes"}
+{"id": "defects.dc_offset.06", "answer": "yes"}
+{"id": "defects.mains_hum.01", "answer": "60 Hz"}
+{"id": "defects.mains_hum.02", "answer": "50 Hz"}
+{"id": "defects.mains_hum.03", "answer": "none"}
+{"id": "defects.mains_hum.04", "answer": "60 Hz"}
+{"id": "defects.mains_hum.05", "answer": "none"}
+{"id": "defects.mains_hum.06", "answer": "50 Hz"}
+{"id": "defects.mains_hum.07", "answer": "none"}
+{"id": "defects.abrupt_start.01", "answer": "no"}
+{"id": "defects.abrupt_start.02", "answer": "no"}
+{"id": "defects.abrupt_start.03", "answer": "yes"}
+{"id": "defects.abrupt_start.04", "answer": "yes"}
+{"id": "defects.abrupt_start.05", "answer": "yes"}
+{"id": "defects.loop_click.01", "answer": "yes"}
+{"id": "defects.loop_click.02", "answer": "yes"}
+{"id": "defects.loop_click.03", "answer": "yes"}
+{"id": "defects.loop_click.04", "answer": "yes"}
+{"id": "defects.loop_click.05", "answer": "yes"}
+{"id": "time.duration.01", "answer": "19.05 s"}
+{"id": "time.duration.02", "answer": "18.19 s"}
+{"id": "time.duration.03", "answer": "17.28 s"}
+{"id": "time.duration.04", "answer": "11.74 s"}
+{"id": "time.duration.05", "answer": "11.1 s"}
+{"id": "time.duration.06", "answer": "29.42 s"}
+{"id": "time.duration.07", "answer": "1.092 s"}
+{"id": "time.duration.08", "answer": "0.6491 s"}
+{"id": "time.duration.09", "answer": "28.83 s"}
+{"id": "time.duration.10", "answer": "5.549 s"}
+{"id": "time.leading_silence.01", "answer": "0.3717 s"}
+{"id": "time.trailing_silence.01", "answer": "0.6317 s"}
+{"id": "time.leading_silence.02", "answer": "1.241 s"}
+{"id": "time.trailing_silence.02", "answer": "1.452 s"}
+{"id": "time.all_silent.01", "answer": "yes"}
+{"id": "time.all_silent.02", "answer": "no"}
+{"id": "time.onset_count.01", "answer": "19 count"}
+{"id": "time.onset_count.02", "answer": "3 count"}
+{"id": "time.onset_count.03", "answer": "8 count"}
+{"id": "time.onset_count.04", "answer": "2 count"}
+{"id": "time.onset_count.05", "answer": "7 count"}
+{"id": "time.onset_count.06", "answer": "2 count"}
+{"id": "time.onset_count.07", "answer": "20 count"}
+{"id": "time.tempo.01", "answer": "88.17 BPM"}
+{"id": "time.tempo.02", "answer": "109.8 BPM"}
+{"id": "time.tempo.03", "answer": "49.77 BPM"}
+{"id": "time.tempo.04", "answer": "114.7 BPM"}
+{"id": "time.impulse_time.01", "answer": "0.5965 s"}
+{"id": "time.impulse_time.02", "answer": "0.6993 s"}
+{"id": "time.impulse_time.03", "answer": "0.7826 s"}
+{"id": "stereo.correlation.01", "answer": "near zero"}
+{"id": "stereo.correlation.02", "answer": "near zero"}
+{"id": "stereo.correlation.03", "answer": "negative"}
+{"id": "stereo.correlation.04", "answer": "near zero"}
+{"id": "stereo.correlation.05", "answer": "negative"}
+{"id": "stereo.channels.01", "answer": "left only"}
+{"id": "stereo.channels.02", "answer": "both"}
+{"id": "stereo.channels.03", "answer": "both"}
+{"id": "stereo.channels.04", "answer": "left only"}
+{"id": "stereo.channels.05", "answer": "left only"}
+{"id": "stereo.out_of_phase.01", "answer": "yes"}
+{"id": "stereo.out_of_phase.02", "answer": "yes"}
+{"id": "stereo.out_of_phase.03", "answer": "no"}
+{"id": "stereo.out_of_phase.04", "answer": "no"}
+{"id": "stereo.out_of_phase.05", "answer": "yes"}
+{"id": "spectrum.tone_or_noise.01", "answer": "noise"}
+{"id": "spectrum.tone_or_noise.02", "answer": "tone"}
+{"id": "spectrum.tone_or_noise.03", "answer": "tone"}
+{"id": "spectrum.tone_or_noise.04", "answer": "noise"}
+{"id": "spectrum.tone_or_noise.05", "answer": "noise"}
+{"id": "spectrum.tone_or_noise.06", "answer": "noise"}
+{"id": "spectrum.tone_or_noise.07", "answer": "noise"}
+{"id": "spectrum.tone_or_noise.08", "answer": "noise"}
+{"id": "spectrum.noise_colour.01", "answer": "brown"}
+{"id": "spectrum.noise_colour.02", "answer": "pink"}
+{"id": "spectrum.noise_colour.03", "answer": "white"}
+{"id": "spectrum.noise_colour.04", "answer": "brown"}
+{"id": "spectrum.noise_colour.05", "answer": "brown"}
+{"id": "spectrum.noise_colour.06", "answer": "white"}
+{"id": "spectrum.noise_colour.07", "answer": "pink"}
+{"id": "spectrum.chord_or_single.01", "answer": "single note"}
+{"id": "spectrum.chord_or_single.02", "answer": "chord"}
+{"id": "spectrum.chord_or_single.03", "answer": "single note"}
+{"id": "spectrum.chord_or_single.04", "answer": "chord"}
+{"id": "spectrum.chord_or_single.05", "answer": "single note"}
+{"id": "spectrum.chord_or_single.06", "answer": "single note"}
+{"id": "spectrum.chord_or_single.07", "answer": "chord"}
+{"id": "melody.transcription.01", "answer": "A#4 F#4 A#4 G#3 G4 C5 D5 F3 C3 C4 A4 A#3 D#4"}
+{"id": "melody.transcription.02", "answer": "D4 E5 C5 C6 D5 D3 C#5 C6 D5 D3 A#3 E5 E3"}
+{"id": "melody.transcription.03", "answer": "E4 A#3 E5 A5 G5 B5 C3"}
+{"id": "melody.transcription.04", "answer": "D3 G5 G#4 G4 F5 D#3 D5 C4"}
+{"id": "melody.transcription.05", "answer": "B5 F3 G#3 C3 C#5 D5"}
