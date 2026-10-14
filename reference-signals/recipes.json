@@ -1,0 +1,1633 @@
+{
+  "pack": {
+    "name": "audio-mcp reference signals",
+    "version": "1.0.0",
+    "description": "Test and calibration audio with known ground truth, for checking audio software, meters and AI audio perception. Every file is synthesized from scratch with audio-mcp and verified against its intended values.",
+    "made_with": "https://github.com/mshark1/audio-mcp"
+  },
+  "assets": [
+    {
+      "file": "tone_997Hz_-20dBFS_mono.wav",
+      "description": "Steady 997 Hz sine (the EBU reference frequency, chosen to avoid aligning with sample rates), sample peak -20 dBFS, 10 s.",
+      "ground_truth": {
+        "frequency_hz": 997,
+        "peak_dbfs": -20.0,
+        "rms_dbfs": -23.01,
+        "duration_s": 10
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "normalize_peak_db": -20,
+              "layers": [
+                {
+                  "wave": "sine",
+                  "freq": 997,
+                  "duration": 10
+                }
+              ]
+            },
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "levels.peak_dbfs",
+          "expect": -20.0,
+          "tol": 0.01
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "levels.rms_dbfs",
+          "expect": -23.01,
+          "tol": 0.02
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "pitch.median.hz",
+          "expect": 997,
+          "tol": 1.5
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "levels.clipped_samples",
+          "expect": 0
+        }
+      ]
+    },
+    {
+      "file": "tone_997Hz_-23LUFS_stereo.wav",
+      "description": "997 Hz sine in both channels, normalized to exactly -23 LUFS integrated (EBU R128 broadcast target). Use it to check a loudness meter.",
+      "ground_truth": {
+        "frequency_hz": 997,
+        "lufs_integrated": -23.0,
+        "channels": "identical"
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "stereo": true,
+              "layers": [
+                {
+                  "wave": "sine",
+                  "freq": 997,
+                  "duration": 10
+                }
+              ]
+            },
+            "output": "{tmp}/t997s.wav",
+            "overwrite": true
+          }
+        },
+        {
+          "tool": "audio_process",
+          "args": {
+            "path": "{tmp}/t997s.wav",
+            "operations": [
+              {
+                "op": "normalize_lufs",
+                "lufs": -23
+              }
+            ],
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "levels.lufs_integrated",
+          "expect": -23.0,
+          "tol": 0.05
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "stereo.width",
+          "expect": "mono (identical channels)"
+        }
+      ]
+    },
+    {
+      "file": "tone_A4_440Hz_-12dBFS.wav",
+      "description": "Concert A (A4 = 440 Hz) sine at -12 dBFS peak, 5 s. Tuning and pitch-detection reference.",
+      "ground_truth": {
+        "note": "A4",
+        "frequency_hz": 440,
+        "cents": 0,
+        "peak_dbfs": -12.0
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "normalize_peak_db": -12,
+              "layers": [
+                {
+                  "wave": "sine",
+                  "freq": "A4",
+                  "duration": 5
+                }
+              ]
+            },
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "pitch.median.note",
+          "expect": "A4"
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "pitch.median.cents",
+          "expect": 0,
+          "tol": 3
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "levels.peak_dbfs",
+          "expect": -12.0,
+          "tol": 0.01
+        }
+      ]
+    },
+    {
+      "file": "scale_chromatic_C4-C5_triangle.wav",
+      "description": "Chromatic scale C4 to C5, 13 notes of 0.4 s each on a band-limited triangle wave. Melody/pitch-tracking reference.",
+      "ground_truth": {
+        "notes": [
+          "C4",
+          "C#4",
+          "D4",
+          "D#4",
+          "E4",
+          "F4",
+          "F#4",
+          "G4",
+          "G#4",
+          "A4",
+          "A#4",
+          "B4",
+          "C5"
+        ],
+        "note_duration_s": 0.4
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "layers": [
+                {
+                  "wave": "triangle",
+                  "sequence": [
+                    [
+                      "C4",
+                      0.4
+                    ],
+                    [
+                      "C#4",
+                      0.4
+                    ],
+                    [
+                      "D4",
+                      0.4
+                    ],
+                    [
+                      "D#4",
+                      0.4
+                    ],
+                    [
+                      "E4",
+                      0.4
+                    ],
+                    [
+                      "F4",
+                      0.4
+                    ],
+                    [
+                      "F#4",
+                      0.4
+                    ],
+                    [
+                      "G4",
+                      0.4
+                    ],
+                    [
+                      "G#4",
+                      0.4
+                    ],
+                    [
+                      "A4",
+                      0.4
+                    ],
+                    [
+                      "A#4",
+                      0.4
+                    ],
+                    [
+                      "B4",
+                      0.4
+                    ],
+                    [
+                      "C5",
+                      0.4
+                    ]
+                  ]
+                }
+              ]
+            },
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_melody",
+          "field": "notes",
+          "pluck": "note",
+          "expect": [
+            "C4",
+            "C#4",
+            "D4",
+            "D#4",
+            "E4",
+            "F4",
+            "F#4",
+            "G4",
+            "G#4",
+            "A4",
+            "A#4",
+            "B4",
+            "C5"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "melody_mary_had_a_little_lamb.wav",
+      "description": "'Mary Had a Little Lamb' (public domain), triangle wave, quarter note = 0.4 s. Includes repeated notes, which a melody transcriber must keep separate.",
+      "ground_truth": {
+        "notes": [
+          "E4",
+          "D4",
+          "C4",
+          "D4",
+          "E4",
+          "E4",
+          "E4",
+          "D4",
+          "D4",
+          "D4",
+          "E4",
+          "G4",
+          "G4"
+        ]
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "layers": [
+                {
+                  "wave": "triangle",
+                  "sequence": [
+                    [
+                      "E4",
+                      0.4
+                    ],
+                    [
+                      "D4",
+                      0.4
+                    ],
+                    [
+                      "C4",
+                      0.4
+                    ],
+                    [
+                      "D4",
+                      0.4
+                    ],
+                    [
+                      "E4",
+                      0.4
+                    ],
+                    [
+                      "E4",
+                      0.4
+                    ],
+                    [
+                      "E4",
+                      0.8
+                    ],
+                    [
+                      "D4",
+                      0.4
+                    ],
+                    [
+                      "D4",
+                      0.4
+                    ],
+                    [
+                      "D4",
+                      0.8
+                    ],
+                    [
+                      "E4",
+                      0.4
+                    ],
+                    [
+                      "G4",
+                      0.4
+                    ],
+                    [
+                      "G4",
+                      0.8
+                    ]
+                  ]
+                }
+              ]
+            },
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_melody",
+          "field": "notes",
+          "pluck": "note",
+          "expect": [
+            "E4",
+            "D4",
+            "C4",
+            "D4",
+            "E4",
+            "E4",
+            "E4",
+            "D4",
+            "D4",
+            "D4",
+            "E4",
+            "G4",
+            "G4"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "chord_Cmaj7_sines.wav",
+      "description": "C major 7 chord (C4 E4 G4 B4) of equal-level sines, 4 s. A monophonic pitch tracker should report this as polyphonic, not as one note.",
+      "ground_truth": {
+        "notes": [
+          "C4",
+          "E4",
+          "G4",
+          "B4"
+        ],
+        "polyphonic": true
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "layers": [
+                {
+                  "wave": "sine",
+                  "freq": "C4",
+                  "duration": 4
+                },
+                {
+                  "wave": "sine",
+                  "freq": "E4",
+                  "duration": 4
+                },
+                {
+                  "wave": "sine",
+                  "freq": "G4",
+                  "duration": 4
+                },
+                {
+                  "wave": "sine",
+                  "freq": "B4",
+                  "duration": 4
+                }
+              ]
+            },
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "pitch.polyphony_likely",
+          "expect": true
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "spectrum.spectral_peaks",
+          "pluck": "note",
+          "expect": [
+            "C4",
+            "E4",
+            "G4",
+            "B4"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "sweep_log_20Hz-20kHz_10s_-6dBFS.wav",
+      "description": "Exponential (logarithmic) sine sweep from 20 Hz to 20 kHz over 10 s, -6 dBFS peak. Frequency-response and spectrogram reference.",
+      "ground_truth": {
+        "start_hz": 20,
+        "end_hz": 20000,
+        "duration_s": 10,
+        "sweep": "exponential",
+        "peak_dbfs": -6.0
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "normalize_peak_db": -6,
+              "layers": [
+                {
+                  "wave": "sine",
+                  "freq": 20,
+                  "freq_end": 20000,
+                  "sweep": "exp",
+                  "duration": 10,
+                  "envelope": {
+                    "attack": 0.01,
+                    "release": 0.01
+                  }
+                }
+              ]
+            },
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "levels.peak_dbfs",
+          "expect": -6.0,
+          "tol": 0.05
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "duration_s",
+          "expect": 10,
+          "tol": 0.001
+        }
+      ]
+    },
+    {
+      "file": "noise_pink_30s_-20dBFS_rms.wav",
+      "description": "Pink noise (equal energy per octave), 30 s, -20 dBFS RMS: the usual level for speaker and room calibration.",
+      "ground_truth": {
+        "type": "pink",
+        "rms_dbfs": -20.0
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "seed": 1,
+              "normalize_peak_db": -6,
+              "layers": [
+                {
+                  "wave": "pink",
+                  "duration": 30
+                }
+              ]
+            },
+            "output": "{tmp}/noise_pink_30s_-20dBFS_rms.wav",
+            "overwrite": true
+          }
+        },
+        {
+          "tool": "audio_process",
+          "args": {
+            "path": "{tmp}/noise_pink_30s_-20dBFS_rms.wav",
+            "operations": [
+              {
+                "op": "normalize_rms",
+                "db": -20
+              }
+            ],
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "levels.rms_dbfs",
+          "expect": -20.0,
+          "tol": 0.05
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "spectrum.character",
+          "expect": "noise-like"
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "levels.clipped_samples",
+          "expect": 0
+        }
+      ]
+    },
+    {
+      "file": "noise_white_10s_-20dBFS_rms.wav",
+      "description": "White noise (flat spectrum), 10 s, -20 dBFS RMS.",
+      "ground_truth": {
+        "type": "white",
+        "rms_dbfs": -20.0
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "seed": 2,
+              "normalize_peak_db": -6,
+              "layers": [
+                {
+                  "wave": "noise",
+                  "duration": 10
+                }
+              ]
+            },
+            "output": "{tmp}/noise_white_10s_-20dBFS_rms.wav",
+            "overwrite": true
+          }
+        },
+        {
+          "tool": "audio_process",
+          "args": {
+            "path": "{tmp}/noise_white_10s_-20dBFS_rms.wav",
+            "operations": [
+              {
+                "op": "normalize_rms",
+                "db": -20
+              }
+            ],
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "levels.rms_dbfs",
+          "expect": -20.0,
+          "tol": 0.05
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "spectrum.brightness",
+          "contains": "bright"
+        }
+      ]
+    },
+    {
+      "file": "loudness_pink_-16LUFS.wav",
+      "description": "Pink noise at exactly -16 LUFS integrated (common podcast/voice target), 20 s, no limiting.",
+      "ground_truth": {
+        "lufs_integrated": -16.0
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "seed": 3,
+              "normalize_peak_db": -12,
+              "layers": [
+                {
+                  "wave": "pink",
+                  "duration": 20
+                }
+              ]
+            },
+            "output": "{tmp}/p16.wav",
+            "overwrite": true
+          }
+        },
+        {
+          "tool": "audio_process",
+          "args": {
+            "path": "{tmp}/p16.wav",
+            "operations": [
+              {
+                "op": "normalize_lufs",
+                "lufs": -16,
+                "ceiling_db": -0.1
+              }
+            ],
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "levels.lufs_integrated",
+          "expect": -16.0,
+          "tol": 0.05
+        }
+      ]
+    },
+    {
+      "file": "loudness_pink_-23LUFS.wav",
+      "description": "Pink noise at exactly -23 LUFS integrated (EBU R128 broadcast target), 20 s.",
+      "ground_truth": {
+        "lufs_integrated": -23.0
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "seed": 4,
+              "normalize_peak_db": -12,
+              "layers": [
+                {
+                  "wave": "pink",
+                  "duration": 20
+                }
+              ]
+            },
+            "output": "{tmp}/p23.wav",
+            "overwrite": true
+          }
+        },
+        {
+          "tool": "audio_process",
+          "args": {
+            "path": "{tmp}/p23.wav",
+            "operations": [
+              {
+                "op": "normalize_lufs",
+                "lufs": -23
+              }
+            ],
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "levels.lufs_integrated",
+          "expect": -23.0,
+          "tol": 0.05
+        }
+      ]
+    },
+    {
+      "file": "silence_10s.wav",
+      "description": "10 s of digital silence (every sample exactly zero).",
+      "ground_truth": {
+        "all_samples_zero": true
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "normalize_peak_db": null,
+              "layers": [
+                {
+                  "wave": "silence",
+                  "duration": 10
+                }
+              ]
+            },
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "silence.all_silent",
+          "expect": true
+        }
+      ]
+    },
+    {
+      "file": "stereo_left_only.wav",
+      "description": "440 Hz tone in the left channel only; right channel silent. Channel-identification test.",
+      "ground_truth": {
+        "left": "440 Hz tone",
+        "right": "silence"
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "layers": [
+                {
+                  "wave": "sine",
+                  "freq": 440,
+                  "duration": 4,
+                  "pan": -1
+                }
+              ]
+            },
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "stereo.width",
+          "expect": "one channel silent"
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "stereo.balance_db",
+          "min": 60
+        }
+      ]
+    },
+    {
+      "file": "stereo_out_of_phase.wav",
+      "description": "440 Hz tone with the right channel polarity-inverted (correlation -1). Sounds wide on headphones but cancels to silence in mono: the classic phase-problem test.",
+      "ground_truth": {
+        "correlation": -1.0,
+        "mono_sum": "silence"
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "stereo": true,
+              "layers": [
+                {
+                  "wave": "sine",
+                  "freq": 440,
+                  "duration": 4
+                }
+              ]
+            },
+            "output": "{tmp}/oop.wav",
+            "overwrite": true
+          }
+        },
+        {
+          "tool": "audio_process",
+          "args": {
+            "path": "{tmp}/oop.wav",
+            "operations": [
+              {
+                "op": "polarity",
+                "channel": 1
+              }
+            ],
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "stereo.correlation",
+          "expect": -1.0,
+          "tol": 0.001
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "issues",
+          "contains": "out of phase"
+        }
+      ]
+    },
+    {
+      "file": "stereo_uncorrelated_noise.wav",
+      "description": "Independent white noise in each channel (correlation near 0): maximally wide, no phase relationship.",
+      "ground_truth": {
+        "correlation": 0.0
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "seed": 5,
+              "layers": [
+                {
+                  "wave": "noise",
+                  "duration": 6,
+                  "pan": -1
+                },
+                {
+                  "wave": "noise",
+                  "duration": 6,
+                  "pan": 1
+                }
+              ]
+            },
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "stereo.correlation",
+          "expect": 0.0,
+          "tol": 0.02
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "stereo.width",
+          "expect": "wide"
+        }
+      ]
+    },
+    {
+      "file": "rhythm_clicks_120bpm_16beats.wav",
+      "description": "16 short clicks at exactly 120 BPM (one every 0.5 s, first at t=0). Onset and tempo reference.",
+      "ground_truth": {
+        "bpm": 120,
+        "onsets": 16,
+        "interval_s": 0.5,
+        "first_onset_s": 0.0
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "seed": 6,
+              "duration": 8,
+              "layers": [
+                {
+                  "wave": "noise",
+                  "highpass": 1000,
+                  "envelope": {
+                    "attack": 0.0005,
+                    "decay": 0.0,
+                    "sustain": 1,
+                    "release": 0.003
+                  },
+                  "sequence": [
+                    [
+                      "x",
+                      0.004
+                    ],
+                    [
+                      "rest",
+                      0.496
+                    ],
+                    [
+                      "x",
+                      0.004
+                    ],
+                    [
+                      "rest",
+                      0.496
+                    ],
+                    [
+                      "x",
+                      0.004
+                    ],
+                    [
+                      "rest",
+                      0.496
+                    ],
+                    [
+                      "x",
+                      0.004
+                    ],
+                    [
+                      "rest",
+                      0.496
+                    ],
+                    [
+                      "x",
+                      0.004
+                    ],
+                    [
+                      "rest",
+                      0.496
+                    ],
+                    [
+                      "x",
+                      0.004
+                    ],
+                    [
+                      "rest",
+                      0.496
+                    ],
+                    [
+                      "x",
+                      0.004
+                    ],
+                    [
+                      "rest",
+                      0.496
+                    ],
+                    [
+                      "x",
+                      0.004
+                    ],
+                    [
+                      "rest",
+                      0.496
+                    ],
+                    [
+                      "x",
+                      0.004
+                    ],
+                    [
+                      "rest",
+                      0.496
+                    ],
+                    [
+                      "x",
+                      0.004
+                    ],
+                    [
+                      "rest",
+                      0.496
+                    ],
+                    [
+                      "x",
+                      0.004
+                    ],
+                    [
+                      "rest",
+                      0.496
+                    ],
+                    [
+                      "x",
+                      0.004
+                    ],
+                    [
+                      "rest",
+                      0.496
+                    ],
+                    [
+                      "x",
+                      0.004
+                    ],
+                    [
+                      "rest",
+                      0.496
+                    ],
+                    [
+                      "x",
+                      0.004
+                    ],
+                    [
+                      "rest",
+                      0.496
+                    ],
+                    [
+                      "x",
+                      0.004
+                    ],
+                    [
+                      "rest",
+                      0.496
+                    ],
+                    [
+                      "x",
+                      0.004
+                    ],
+                    [
+                      "rest",
+                      0.496
+                    ]
+                  ]
+                }
+              ]
+            },
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "rhythm.onset_count",
+          "expect": 16
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "rhythm.tempo_bpm",
+          "expect": 120,
+          "tol": 1.5
+        },
+        {
+          "tool": "audio_events",
+          "field": "event_count",
+          "expect": 16
+        }
+      ]
+    },
+    {
+      "file": "impulse_single_sample.wav",
+      "description": "One full-scale sample (+1.0) at exactly 0.5 s in 1 s of silence. Impulse-response, latency and alignment reference.",
+      "ground_truth": {
+        "impulse_time_s": 0.5,
+        "impulse_sample_index": 24000,
+        "value": 1.0
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "duration": 1,
+              "normalize_peak_db": null,
+              "layers": [
+                {
+                  "wave": "impulse",
+                  "start": 0.5,
+                  "duration": 0.5
+                }
+              ]
+            },
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "levels.peak_dbfs",
+          "expect": 0.0,
+          "tol": 0.001
+        },
+        {
+          "tool": "audio_events",
+          "field": "event_count",
+          "expect": 1
+        },
+        {
+          "tool": "audio_events",
+          "field": "events.0.start_s",
+          "expect": 0.5,
+          "tol": 0.011
+        }
+      ]
+    },
+    {
+      "file": "true_peak_intersample_+2dBTP.wav",
+      "description": "12 kHz sine at 45 degrees phase (a quarter of the sample rate): every sample sits at -1.0 dBFS but the reconstructed waveform peaks about 3 dB higher, at +2.0 dBTP. Sample-peak meters miss this; true-peak meters (BS.1770) must catch it.",
+      "ground_truth": {
+        "sample_peak_dbfs": -1.0,
+        "true_peak_dbtp": 2.01
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "normalize_peak_db": -1,
+              "layers": [
+                {
+                  "wave": "sine",
+                  "freq": 12000,
+                  "phase": 45,
+                  "duration": 3,
+                  "envelope": {
+                    "attack": 0.01,
+                    "release": 0.01
+                  }
+                }
+              ]
+            },
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "levels.peak_dbfs",
+          "expect": -1.0,
+          "tol": 0.01
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "levels.true_peak_dbtp",
+          "expect": 2.01,
+          "tol": 0.05
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "issues",
+          "contains": "True peak"
+        }
+      ]
+    },
+    {
+      "file": "problem_clipping.wav",
+      "description": "PROBLEM FILE: 220 Hz tone driven 6 dB past full scale, so its peaks are flattened (hard clipping). An analyzer should flag it.",
+      "ground_truth": {
+        "clipped": true
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "normalize_peak_db": 6,
+              "layers": [
+                {
+                  "wave": "sine",
+                  "freq": 220,
+                  "duration": 3
+                }
+              ]
+            },
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "levels.clipped_samples",
+          "min": 1000
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "issues",
+          "contains": "Digital clipping"
+        }
+      ]
+    },
+    {
+      "file": "problem_mains_hum_60Hz.wav",
+      "description": "PROBLEM FILE: gated 700 Hz tone over 60 Hz mains hum (with a 180 Hz harmonic) and faint hiss, as from a ground loop.",
+      "ground_truth": {
+        "hum_hz": 60,
+        "hum_harmonics_hz": [
+          180
+        ]
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "seed": 7,
+              "layers": [
+                {
+                  "wave": "sine",
+                  "sequence": [
+                    [
+                      "F5",
+                      0.5
+                    ],
+                    [
+                      "rest",
+                      0.5
+                    ],
+                    [
+                      "F5",
+                      0.5
+                    ],
+                    [
+                      "rest",
+                      0.5
+                    ],
+                    [
+                      "F5",
+                      0.5
+                    ],
+                    [
+                      "rest",
+                      0.5
+                    ],
+                    [
+                      "F5",
+                      0.5
+                    ],
+                    [
+                      "rest",
+                      0.5
+                    ],
+                    [
+                      "F5",
+                      0.5
+                    ],
+                    [
+                      "rest",
+                      0.5
+                    ],
+                    [
+                      "F5",
+                      0.5
+                    ],
+                    [
+                      "rest",
+                      0.5
+                    ]
+                  ]
+                },
+                {
+                  "wave": "sine",
+                  "freq": 60,
+                  "duration": 6,
+                  "gain_db": -18
+                },
+                {
+                  "wave": "sine",
+                  "freq": 180,
+                  "duration": 6,
+                  "gain_db": -28
+                },
+                {
+                  "wave": "pink",
+                  "duration": 6,
+                  "gain_db": -36
+                }
+              ]
+            },
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "issues",
+          "contains": "Mains hum at 60 Hz"
+        }
+      ]
+    },
+    {
+      "file": "problem_leading_silence.wav",
+      "description": "PROBLEM FILE: a short tone preceded by 1.5 s and followed by 1.0 s of silence (a common one-shot sound-effect defect).",
+      "ground_truth": {
+        "leading_silence_s": 1.5,
+        "trailing_silence_s": 1.0
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "layers": [
+                {
+                  "wave": "triangle",
+                  "freq": "E5",
+                  "duration": 0.5
+                }
+              ]
+            },
+            "output": "{tmp}/ls.wav",
+            "overwrite": true
+          }
+        },
+        {
+          "tool": "audio_process",
+          "args": {
+            "path": "{tmp}/ls.wav",
+            "operations": [
+              {
+                "op": "pad",
+                "start": 1.5,
+                "end": 1.0
+              }
+            ],
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "silence.leading_s",
+          "expect": 1.5,
+          "tol": 0.02
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "silence.trailing_s",
+          "expect": 1.0,
+          "tol": 0.03
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "issues",
+          "contains": "leading silence"
+        }
+      ]
+    },
+    {
+      "file": "problem_too_quiet_-40LUFS.wav",
+      "description": "PROBLEM FILE: pink noise at -40 LUFS, far below any delivery target. An analyzer should flag it as very quiet.",
+      "ground_truth": {
+        "lufs_integrated": -40.0
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "seed": 8,
+              "layers": [
+                {
+                  "wave": "pink",
+                  "duration": 10
+                }
+              ]
+            },
+            "output": "{tmp}/q.wav",
+            "overwrite": true
+          }
+        },
+        {
+          "tool": "audio_process",
+          "args": {
+            "path": "{tmp}/q.wav",
+            "operations": [
+              {
+                "op": "normalize_lufs",
+                "lufs": -40
+              }
+            ],
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "levels.lufs_integrated",
+          "expect": -40.0,
+          "tol": 0.05
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "issues",
+          "contains": "Very quiet"
+        }
+      ]
+    },
+    {
+      "file": "problem_abrupt_start.wav",
+      "description": "PROBLEM FILE: noise burst that starts at full level with no fade-in, so playback begins with a click.",
+      "ground_truth": {
+        "abrupt_start": true
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "seed": 9,
+              "layers": [
+                {
+                  "wave": "noise",
+                  "duration": 1,
+                  "envelope": {
+                    "attack": 0,
+                    "release": 0.2
+                  }
+                }
+              ]
+            },
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "issues",
+          "contains": "Starts abruptly"
+        }
+      ]
+    },
+    {
+      "file": "problem_loop_seam_click.wav",
+      "description": "PROBLEM FILE: 2 s of brown noise cut out of a longer recording and meant as a loop; the end doesn't meet the start, so it clicks every time it repeats. Pair with fixed_loop_seamless.wav.",
+      "ground_truth": {
+        "loop_click": true
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "seed": 10,
+              "layers": [
+                {
+                  "wave": "brown",
+                  "duration": 3,
+                  "envelope": {
+                    "attack": 0,
+                    "release": 0
+                  }
+                }
+              ]
+            },
+            "output": "{tmp}/brown3.wav",
+            "overwrite": true
+          }
+        },
+        {
+          "tool": "audio_process",
+          "args": {
+            "path": "{tmp}/brown3.wav",
+            "operations": [
+              {
+                "op": "crop",
+                "start": 0.37,
+                "end": 2.37
+              }
+            ],
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "edges.loop_seam.likely_click",
+          "expect": true
+        }
+      ]
+    },
+    {
+      "file": "fixed_loop_seamless.wav",
+      "description": "FIXED: problem_loop_seam_click.wav after a 100 ms equal-power loop crossfade; it now repeats without a click.",
+      "ground_truth": {
+        "loop_click": false
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "seed": 10,
+              "layers": [
+                {
+                  "wave": "brown",
+                  "duration": 3,
+                  "envelope": {
+                    "attack": 0,
+                    "release": 0
+                  }
+                }
+              ]
+            },
+            "output": "{tmp}/brown3.wav",
+            "overwrite": true
+          }
+        },
+        {
+          "tool": "audio_process",
+          "args": {
+            "path": "{tmp}/brown3.wav",
+            "operations": [
+              {
+                "op": "crop",
+                "start": 0.37,
+                "end": 2.37
+              },
+              {
+                "op": "loop_crossfade",
+                "seconds": 0.1
+              }
+            ],
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "edges.loop_seam.likely_click",
+          "expect": false
+        }
+      ]
+    },
+    {
+      "file": "problem_dc_offset.wav",
+      "description": "PROBLEM FILE: 440 Hz tone riding on a constant DC offset of +0.1 (a fault from some converters and cheap interfaces). Fix with remove_dc or a high-pass filter.",
+      "ground_truth": {
+        "dc_offset": 0.1
+      },
+      "steps": [
+        {
+          "tool": "audio_synthesize",
+          "args": {
+            "spec": {
+              "sample_rate": 48000,
+              "normalize_peak_db": null,
+              "layers": [
+                {
+                  "wave": "sine",
+                  "freq": 440,
+                  "duration": 3,
+                  "gain_db": -12
+                },
+                {
+                  "wave": "dc",
+                  "duration": 3,
+                  "gain_db": -20
+                }
+              ]
+            },
+            "output": "{out}",
+            "overwrite": true
+          }
+        }
+      ],
+      "checks": [
+        {
+          "tool": "audio_analyze",
+          "field": "levels.dc_offset",
+          "expect": 0.1,
+          "tol": 0.002
+        },
+        {
+          "tool": "audio_analyze",
+          "field": "issues",
+          "contains": "DC offset"
+        }
+      ]
+    }
+  ]
+}
