@@ -1084,7 +1084,7 @@
   },
   {
    "file": "game_coin.wav",
-   "description": "Classic two-tone coin pickup (B5 to E6).",
+   "description": "Bright metallic chime: coin or gem collected. One struck tone with a non-harmonic bell partial and a short upward glint (deliberately not a two-note square-wave melody).",
    "steps": [
     {
      "tool": "audio_synthesize",
@@ -1094,23 +1094,49 @@
        "seed": 930,
        "layers": [
         {
-         "wave": "square",
-         "sequence": [
-          [
-           "B5",
-           0.06
-          ],
-          [
-           "E6",
-           0.32
-          ]
-         ],
-         "lowpass": 6000,
+         "wave": "sine",
+         "freq": 1480,
+         "duration": 0.45,
          "envelope": {
           "attack": 0.001,
-          "decay": 0.25,
-          "sustain": 0.2,
-          "release": 0.06
+          "decay": 0.44,
+          "sustain": 0.0,
+          "release": 0.01
+         }
+        },
+        {
+         "wave": "sine",
+         "freq": 4085,
+         "duration": 0.18,
+         "gain_db": -11,
+         "envelope": {
+          "attack": 0.001,
+          "decay": 0.17,
+          "sustain": 0.0,
+          "release": 0.01
+         }
+        },
+        {
+         "wave": "sine",
+         "freq": 2960,
+         "duration": 0.25,
+         "gain_db": -15,
+         "envelope": {
+          "attack": 0.001,
+          "decay": 0.24,
+          "sustain": 0.0,
+          "release": 0.01
+         }
+        },
+        {
+         "wave": "triangle",
+         "freq": 1100,
+         "freq_end": 1480,
+         "duration": 0.025,
+         "gain_db": -9,
+         "envelope": {
+          "attack": 0.001,
+          "release": 0.02
          }
         }
        ]
@@ -1823,7 +1849,7 @@
   },
   {
    "file": "game_over.wav",
-   "description": "Slow descending phrase with a wobbling last note: game over.",
+   "description": "Falling minor arpeggio that slows down, the last note sagging: game over (deliberately not the chromatic 'sad trombone' slide).",
    "steps": [
     {
      "tool": "audio_synthesize",
@@ -1833,35 +1859,65 @@
        "seed": 949,
        "layers": [
         {
-         "wave": "square",
+         "wave": "triangle",
          "sequence": [
           [
-           "G4",
-           0.28
-          ],
-          [
-           "F#4",
-           0.28
-          ],
-          [
-           "F4",
-           0.28
+           "A4",
+           0.22
           ],
           [
            "E4",
-           0.9
+           0.26
+          ],
+          [
+           "C4",
+           0.32
           ]
          ],
-         "lowpass": 2500,
-         "vibrato": {
-          "rate_hz": 6,
-          "depth_cents": 25
-         },
          "envelope": {
-          "attack": 0.005,
-          "decay": 0.1,
-          "sustain": 0.7,
-          "release": 0.25
+          "attack": 0.004,
+          "decay": 0.08,
+          "sustain": 0.6,
+          "release": 0.08
+         }
+        },
+        {
+         "wave": "triangle",
+         "freq": "A3",
+         "freq_end": 207.65,
+         "start": 0.8,
+         "duration": 0.85,
+         "envelope": {
+          "attack": 0.004,
+          "decay": 0.3,
+          "sustain": 0.4,
+          "release": 0.4
+         }
+        },
+        {
+         "wave": "sine",
+         "sequence": [
+          [
+           "A3",
+           0.22
+          ],
+          [
+           "E3",
+           0.26
+          ],
+          [
+           "C3",
+           0.32
+          ],
+          [
+           "A2",
+           0.85
+          ]
+         ],
+         "gain_db": -10,
+         "envelope": {
+          "attack": 0.004,
+          "release": 0.2
          }
         }
        ]

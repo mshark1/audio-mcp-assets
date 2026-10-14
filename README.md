@@ -73,6 +73,13 @@ All files are 48 kHz, 24-bit WAV.
 (what the file *is*), the `verification` results (expected vs. measured) and the `recipe` (the tool calls that
 made it). A model or audio tool under test can be scored against `ground_truth` directly.
 
+## Also in this repository: UI and retro game sounds
+
+[`sfx-retro-ui/`](sfx-retro-ui/) has 24 short interface and retro-game sound effects (clicks, toggles,
+notifications, coin, jump, laser, explosion and more), also CC0 and synthesized from recipes, loudness-matched,
+listened to by a person, and checked for resemblance to famous game sounds. Its README explains the provenance,
+including one design that was withdrawn for sounding like a famous effect.
+
 ## Rebuild or extend
 
 ```bash
@@ -81,7 +88,7 @@ python tools/build.py reference-signals               # regenerate every file vi
 python tools/verify_independent.py reference-signals  # independent cross-check
 ```
 
-To add a signal, add a recipe (tool calls plus checks) to `reference-signals/recipes.json`. Building this pack
+To add a signal or a sound, see [CONTRIBUTING.md](CONTRIBUTING.md) (design rules and checks). Building this pack
 turned up several bugs and missing features in audio-mcp, which were fixed upstream; see [FRICTION.md](FRICTION.md).
 
 ## License

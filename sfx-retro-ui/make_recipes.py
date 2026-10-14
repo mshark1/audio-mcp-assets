@@ -1,4 +1,8 @@
-"""Generate recipes.json for the UI and retro-game sound effects pack (DRAFT: needs a human listening review).
+"""Generate recipes.json for the UI and retro-game sound effects pack.
+
+Design rule (see CONTRIBUTING.md): describe each sound by what it does, never by what it imitates, and don't
+recreate named or recognizable sounds. The first coin design broke this rule (it reused the Super Mario Bros. coin's
+notes and shape) and was replaced. Check with tools/similarity_check.py; a person listens before release.
 
 Each sound is a synth spec (the design) plus the same finishing chain and technical checks. Run:
     python sfx-retro-ui/make_recipes.py && python tools/build.py sfx-retro-ui
@@ -43,8 +47,12 @@ SOUNDS = {
         {"wave": "noise", "duration": 0.09, "lowpass": 3000, "envelope": {"attack": 0.002, "release": 0.08}},
         {"wave": "sine", "freq": 420, "freq_end": 130, "start": 0.03, "duration": 0.16, "gain_db": -2, "envelope": {"attack": 0.003, "release": 0.1}}], {}),
     # ---- retro game ----
-    "game_coin": ("Classic two-tone coin pickup (B5 to E6).", [
-        {"wave": "square", "sequence": [["B5", 0.06], ["E6", 0.32]], "lowpass": 6000, "envelope": {"attack": 0.001, "decay": 0.25, "sustain": 0.2, "release": 0.06}}], {}),
+    "game_coin": ("Bright metallic chime: coin or gem collected. One struck tone with a non-harmonic bell partial "
+                  "and a short upward glint (deliberately not a two-note square-wave melody).", [
+        {"wave": "sine", "freq": 1480, "duration": 0.45, "envelope": {"attack": 0.001, "decay": 0.44, "sustain": 0.0, "release": 0.01}},
+        {"wave": "sine", "freq": 4085, "duration": 0.18, "gain_db": -11, "envelope": {"attack": 0.001, "decay": 0.17, "sustain": 0.0, "release": 0.01}},
+        {"wave": "sine", "freq": 2960, "duration": 0.25, "gain_db": -15, "envelope": {"attack": 0.001, "decay": 0.24, "sustain": 0.0, "release": 0.01}},
+        {"wave": "triangle", "freq": 1100, "freq_end": 1480, "duration": 0.025, "gain_db": -9, "envelope": {"attack": 0.001, "release": 0.02}}], {}),
     "game_jump": ("Upward square-wave sweep: player jumps.", [
         {"wave": "square", "freq": 180, "freq_end": 620, "duration": 0.18, "lowpass": 5000, "envelope": {"attack": 0.002, "release": 0.07}}], {}),
     "game_powerup": ("Fast rising arpeggio over two octaves: power-up collected.", [
@@ -64,8 +72,11 @@ SOUNDS = {
         {"wave": "triangle", "freq": "E6", "start": 0.08, "duration": 0.12, "gain_db": -4, "envelope": {"attack": 0.002, "release": 0.09}}], {}),
     "game_select": ("Tiny square blip: menu cursor moves.", [
         {"wave": "square", "freq": 990, "duration": 0.035, "lowpass": 5000, "gain_db": -2, "envelope": {"attack": 0.001, "release": 0.015}}], {}),
-    "game_over": ("Slow descending phrase with a wobbling last note: game over.", [
-        {"wave": "square", "sequence": [["G4", 0.28], ["F#4", 0.28], ["F4", 0.28], ["E4", 0.9]], "lowpass": 2500, "vibrato": {"rate_hz": 6, "depth_cents": 25}, "envelope": {"attack": 0.005, "decay": 0.1, "sustain": 0.7, "release": 0.25}}], {}),
+    "game_over": ("Falling minor arpeggio that slows down, the last note sagging: game over "
+                  "(deliberately not the chromatic 'sad trombone' slide).", [
+        {"wave": "triangle", "sequence": [["A4", 0.22], ["E4", 0.26], ["C4", 0.32]], "envelope": {"attack": 0.004, "decay": 0.08, "sustain": 0.6, "release": 0.08}},
+        {"wave": "triangle", "freq": "A3", "freq_end": 207.65, "start": 0.8, "duration": 0.85, "envelope": {"attack": 0.004, "decay": 0.3, "sustain": 0.4, "release": 0.4}},
+        {"wave": "sine", "sequence": [["A3", 0.22], ["E3", 0.26], ["C3", 0.32], ["A2", 0.85]], "gain_db": -10, "envelope": {"attack": 0.004, "release": 0.2}}], {}),
     "game_level_complete": ("Short triumphant fanfare: level complete.", [
         {"wave": "triangle", "sequence": [["C5", 0.12], ["E5", 0.12], ["G5", 0.12], ["C6", 0.24], ["G5", 0.12], ["C6", 0.5]], "envelope": {"attack": 0.003, "decay": 0.05, "sustain": 0.7, "release": 0.1}},
         {"wave": "square", "sequence": [["C4", 0.36], ["G4", 0.36], ["C5", 0.74]], "lowpass": 2000, "gain_db": -12, "envelope": {"attack": 0.003, "release": 0.15}}], {}),
