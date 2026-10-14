@@ -85,7 +85,7 @@
 {"id": "loudness.sample_peak.05", "answer": -1.0, "expected": -1.0, "evidence": {"peak_dbfs": -1.0}}
 {"id": "loudness.true_peak.01", "answer": 2.03, "expected": 2.01, "evidence": {"true_peak_dbtp": 2.03}}
 {"id": "loudness.true_peak_over.01", "answer": "yes", "expected": "yes", "evidence": {"true_minus_sample_db": 3.03}}
-{"id": "loudness.true_peak_over.02", "answer": "yes", "expected": "no", "evidence": {"true_minus_sample_db": 1.08}}
+{"id": "loudness.true_peak_over.02", "answer": "no", "expected": "no", "evidence": {"true_minus_sample_db": 0.01}}
 {"id": "loudness.true_peak_over.03", "answer": "no", "expected": "no", "evidence": {"true_minus_sample_db": 0.01}}
 {"id": "loudness.true_peak_over.04", "answer": "no", "expected": "no", "evidence": {"true_minus_sample_db": 0.01}}
 {"id": "defects.clipping.01", "answer": "yes", "expected": "yes", "evidence": {"clipped_samples": 94275}}

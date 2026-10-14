@@ -89,7 +89,8 @@ known by construction and re-measured independently.
 - It scores native audio models and tool-using agents (an LLM calling audio-mcp) on identical items.
 - It complements SonicBench and PitchBench with engineering properties such as LUFS, true peak, clipping, hum and
   loop seams, plus deliberate traps where peak and loudness, or brightness and pitch, disagree.
-- Measured baselines: random 23.4% (chance 24.6%), and a rule-based audio-mcp "tool ceiling" (not an LLM) at 98.2%.
+- Measured baselines: random 23.4% (chance 24.6%), and a rule-based audio-mcp "tool ceiling" (not an LLM) at 98.7% with audio-mcp 0.3.0 (the benchmark found a
+  true-peak bug in 0.2.0, since fixed).
   The ceiling's four misses are documented as tool limitations.
 
 ## Rebuild or extend

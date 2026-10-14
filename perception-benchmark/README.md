@@ -158,7 +158,7 @@ python perception-benchmark/score.py predictions.jsonl --name "my model" --json 
 |---|---|---|---|---|---|---|---|---|---|
 | Chance (analytic) | 24.6% | | 15.1% | 20.7% | 46.2% | 5.9% | 38.9% | 44.7% | 2.7% |
 | Random (`baselines/random.py`, seed 0) | 23.4% | 23.5% | 11.3% | 27.0% | 41.9% | 10.0% | 40.0% | 31.8% | 2.5% |
-| Tool ceiling (`baselines/audio_mcp_tools.py`, audio-mcp 0.2.0) | **98.2%** | 97.1% | 100% | 97.3% | 100% | 96.7% | 100% | 95.5% | 90.0% |
+| Tool ceiling (`baselines/audio_mcp_tools.py`, audio-mcp 0.3.0) | **98.7%** | 97.4% | 100% | 100% | 100% | 96.7% | 100% | 95.5% | 90% |
 
 - **Random baseline:** over seeds 0 to 10 the overall score ranged from 21.2% to 29.0%, with a mean of 24.5%,
   matching the analytic chance.
@@ -171,14 +171,15 @@ python perception-benchmark/score.py predictions.jsonl --name "my model" --json 
 - **Model results:** none are reported here. This repository can't run external models, so no native-audio or
   LLM-agent results exist yet.
 
-### Tool misses (audio-mcp 0.2.0)
+### Tool misses
 
-The tool ceiling missed 4 of 193 items (3.5 points with partial credit). Each is a real limitation of the tool;
-the ground truth was re-checked independently.
+With audio-mcp 0.3.0 the tool ceiling misses 3 of 193 items (98.7%). Each is a real limitation of the tool,
+and the ground truth was re-checked independently. The first row below was a fourth miss in 0.2.0 (98.2% then):
+this benchmark found it, and it was **fixed in audio-mcp 0.3.0**, which is the point of building it.
 
 | Item | Expected | Tool gave | Cause |
 |---|---|---|---|
-| `loudness.true_peak_over.02` (`reference-signals/tone_997Hz_-20dBFS_mono.wav`) | no (true peak ≈ sample peak, -19.99 dBTP) | yes: `true_peak_dbtp` -18.92, +1.08 dB over the sample peak | **Bug in `dsp.true_peak`:** it oversamples in blocks of 2^18 samples with 64-sample padding, but takes the maximum over the padded edges too. The resampler rings where a block boundary cuts the waveform, so a steady tone longer than 5.46 s at 48 kHz reads about 1 dB high (`tone_997Hz_-23LUFS_stereo.wav`: -21.92 instead of -22.99 dBTP). Discarding the padded margins of each upsampled block gives the correct value. |
+| ~~`loudness.true_peak_over.02`~~ **fixed in 0.3.0** (`reference-signals/tone_997Hz_-20dBFS_mono.wav`) | no (true peak ≈ sample peak, -19.99 dBTP) | 0.2.0 said yes: `true_peak_dbtp` -18.92, +1.08 dB over the sample peak. 0.3.0 reads -19.99 | **Bug in `dsp.true_peak`:** it oversamples in blocks of 2^18 samples with 64-sample padding, but takes the maximum over the padded edges too. The resampler rings where a block boundary cuts the waveform, so a steady tone longer than 5.46 s at 48 kHz reads about 1 dB high (`tone_997Hz_-23LUFS_stereo.wav`: -21.92 instead of -22.99 dBTP). Discarding the padded margins of each upsampled block gives the correct value. |
 | `time.tempo.04` (`stim_058`, 8 clicks at 150 BPM, 3.2 s) | 150 BPM | no `tempo_bpm` in the output | The tool finds all 8 onsets at exactly 0.4 s spacing ("very regular") but reports no tempo; 90 and 100 BPM files of 8 clicks get one. |
 | `spectrum.chord_or_single.02` (`stim_064`, C major triad C4 E4 G4, sines) | chord | single note: `polyphony_likely` false | C4:E4:G4 is close to 4:5:6, which fits harmonics 4 to 6 of C2, so the harmonic-series test accepts it as one note with a missing fundamental. `spectrum.spectral_peaks` does list C4, E4 and G4. The Cmaj7 and A minor (triangle) chords are detected. |
 | `melody.transcription.04` (`stim_067`, *Frère Jacques* opening on a sine) | C4 D4 E4 C4 C4 D4 E4 C4 | C4 D4 E4 C4 D4 E4 C4 (score 0.5: the merge shifts every later note by one position) | `audio_melody` merges the repeated C4 C4 into one 0.68 s note, although each note has its own 30 ms release and 5 ms attack. `audio_events` on the same file separates them (`pitched_sequence` matches exactly). Repeated notes on the triangle-wave *Mary Had a Little Lamb* are kept apart. |
@@ -224,7 +225,7 @@ python perception-benchmark/baselines/audio_mcp_tools.py && python perception-be
 ```
 
 `validate.py` needs numpy, scipy, soundfile and pyloudnorm. `score.py` and `baselines/random.py` need only Python.
-The tool ceiling and the stimulus build need `audio-mcp>=0.2.0`.
+The stimulus build needs `audio-mcp>=0.2.0`; the tool-ceiling numbers above were measured with 0.3.0.
 
 ## License
 

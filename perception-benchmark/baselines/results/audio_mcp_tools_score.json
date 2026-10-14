@@ -1,11 +1,11 @@
 {
  "overall": {
   "n": 193,
-  "score": 0.9818652849740933,
+  "score": 0.9870466321243523,
   "chance": 0.2462728649983752,
   "missing": 1
  },
- "macro_category_score": 0.9705978705978706,
+ "macro_category_score": 0.9744588744588745,
  "by_category": {
   "pitch": {
    "n": 53,
@@ -15,7 +15,7 @@
   },
   "loudness": {
    "n": 37,
-   "score": 0.972972972972973,
+   "score": 1.0,
    "chance": 0.20696150696150695,
    "missing": 0
   },
@@ -101,7 +101,7 @@
   },
   "loudness.true_peak_over": {
    "n": 4,
-   "score": 0.75,
+   "score": 1.0,
    "chance": 0.5,
    "missing": 0
   },
@@ -235,7 +235,7 @@
   },
   "medium": {
    "n": 99,
-   "score": 0.9696969696969697,
+   "score": 0.9797979797979798,
    "chance": 0.2097463951453569,
    "missing": 1
   }
@@ -1216,7 +1216,7 @@
    "task": "true_peak_over",
    "difficulty": "medium",
    "trap": false,
-   "score": 0.0,
+   "score": 1.0,
    "chance": 0.5,
    "missing": false
   },
@@ -2298,5 +2298,5 @@
    "missing": false
   }
  ],
- "name": "audio-mcp 0.2.0 tool ceiling (rule-based, not an LLM)"
+ "name": "audio-mcp 0.3.0 tool ceiling (rule-based, not an LLM)"
 }
